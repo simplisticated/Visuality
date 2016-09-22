@@ -15,7 +15,7 @@
 
 ##How To Get Started
 
-- Copy content of `Source` folder to your project.
+- Copy content of `Visuality` folder to your project.
 
 or
 
