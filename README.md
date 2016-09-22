@@ -2,7 +2,15 @@
   <img src="https://github.com/igormatyushkin014/Visuality/blob/master/Logo/logo-1024-300.png" alt="Visuality" title="Visuality">
 </p>
 
-# Visuality
+<p align="center">
+<a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat"></a>
+<a href="https://cocoapods.org"><img src="https://img.shields.io/cocoapods/v/Visuality.svg?maxAge=2592000"></a>
+<a href="https://cocoapods.org"><img src="https://img.shields.io/cocoapods/dt/Visuality.svg?maxAge=2592000"></a>
+<a href="https://tldrlegal.com/license/mit-license"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat"></a>
+</p>
+
+# At a Glance
+
 `Visuality` is a library for iOS which includes set of classes and extensions that simplify work with native SDK in Swift.
 
 ##How To Get Started
@@ -13,10 +21,12 @@ or
 
 - Use `Visuality` cocoapod
 
+**Note**: For Swift 2.x use `Visuality v1.2.5`. For Swift 3.0 use `Visuality v3.0`.
+
 ## Requirements
 
-* iOS 8 and later
-* Xcode 7 and later
+* iOS 9.0 and later
+* Xcode 8 and later
 
 ## Usage
 
