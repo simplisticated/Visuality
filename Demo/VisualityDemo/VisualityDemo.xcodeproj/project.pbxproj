@@ -601,7 +601,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				DEVELOPMENT_TEAM = AFEG59EG8E;
 				INFOPLIST_FILE = VisualityDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.postscriptum.VisualityDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -617,7 +617,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				DEVELOPMENT_TEAM = AFEG59EG8E;
 				INFOPLIST_FILE = VisualityDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.postscriptum.VisualityDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
