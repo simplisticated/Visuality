@@ -47,21 +47,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Create window and display main screen
         
-        VTNavigationManager.sharedNavigationManager().createWindowOfType(windowType: UIWindow.self, andMakeItKeyAndVisible: true) { (window) -> Void in
+        VTNavigationManager.shared.createWindow(ofType: UIWindow.self, andMakeItKeyAndVisible: true) { (window) in
             window.backgroundColor = .white
             self.window = window
-        }.switchToNavigationControllerOfType(navigationControllerType: UINavigationController.self) { (navigationController) -> Void in
+        }.switchToNavigationController(ofType: UINavigationController.self, inWindow: window!) { (navigationController) in
             let mainViewController = MainViewController.VT_viewControllerFromNibWithClassNameLocatedInMainBundle() as! MainViewController
             
             navigationController.viewControllers = [
                 mainViewController
             ]
-        }.addViewToKeyWindowAnimated(view: fullScreenView, withDuration: 2.0, prepareForAnimationBlock: { (view, window) -> Void in
+        }.addView(view: fullScreenView, toKeyWindowFromApplication: UIApplication.shared, animated: true, withDuration: 2.0, prepareForAnimation: { (view, window) in
             view.frame = window.bounds
             view.alpha = 0.0
-        }, animationBlock: { (view, window) -> Void in
+        }, animationBlock: { (view, window) in
             view.alpha = 1.0
-        }) { (finished) -> Void in
+        }) { (finished) in
         }
         
         
