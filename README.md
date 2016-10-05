@@ -27,6 +27,8 @@ or
 * Xcode 8 and later
 * Swift 3.0 and later
 
+**Note**: Swift 2.x is not supported anymore. Use `Visuality` with projects written in Swift 3.0.
+
 ## Usage
 
 ### View Initialization
