@@ -21,12 +21,11 @@ or
 
 - Use `Visuality` cocoapod
 
-**Note**: For Swift 2.x use `Visuality v1.2.5`. For Swift 3.0 use `Visuality v3.0`.
-
 ## Requirements
 
 * iOS 9.0 and later
 * Xcode 8 and later
+* Swift 3.0 and later
 
 ## Usage
 
