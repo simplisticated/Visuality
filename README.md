@@ -40,23 +40,23 @@ Examples of view initialization by using methods from `UIView` extension:
  * Initialize by nib name and bundle.
  */
 
-let someBundle1 = NSBundle(identifier: "com.example.SomeBundleIdentifier")
+let someBundle1 = Bundle(identifier: "com.example.SomeBundleIdentifier")
 
-let someView1 = SomeView.VT_viewFromNibWithName("SomeNibName", locatedInBundle: someBundle1)
+let someView1 = SomeView.vt_view(fromNibWithName: "SomeNibName", locatedInBundle: someBundle1)
 
 
 /*
  * Initialize by nib name and bundle identifier.
  */
 
-let someView2 = SomeView.VT_viewFromNibWithName("SomeNibName", locatedInBundleWithIdentifier: "com.example.SomeBundleIdentifier")
+let someView2 = SomeView.vt_view(fromNibWithName: "SomeNibName", locatedInBundleWithIdentifier: "com.example.SomeBundleIdentifier")
 
 
 /*
  * Initialize by nib name located in main bundle.
  */
 
-let someView3 = SomeView.VT_viewFromNibLocatedInMainBundleWithNibName("SomeNibName")
+let someView3 = SomeView.vt_view(fromNibLocatedInMainBundleWithNibName: "SomeNibName")
 
 
 /*
@@ -64,30 +64,30 @@ let someView3 = SomeView.VT_viewFromNibLocatedInMainBundleWithNibName("SomeNibNa
  * view will be loaded from main bundle too.
  */
 
-let someView4 = SomeView.VT_viewFromNibWithName("SomeNibName", locatedInBundle: nil)
+let someView4 = SomeView.vt_view(fromNibWithName: "SomeNibName", locatedInBundle: nil)
 
 
 /*
  * Initialize from nib with class name and bundle.
  */
 
-let someBundle5 = NSBundle(identifier: "com.example.SomeBundleIdentifier")
+let someBundle5 = Bundle(identifier: "com.example.SomeBundleIdentifier")
 
-let someView5 = SomeView.VT_viewFromNibWithClassNameLocatedInBundle(someBundle5)
+let someView5 = SomeView.vt_view(fromNibWithClassNameLocatedInBundle: someBundle5)
 
 
 /*
  * Initialize from nib with class name and bundle identifier.
  */
 
-let someView6 = SomeView.VT_viewFromNibWithClassNameLocatedInBundleWithIdentifier("com.example.SomeBundleIdentifier")
+let someView6 = SomeView.vt_view(fromNibWithClassNameLocatedInBundleWithIdentifier: "com.example.SomeBundleIdentifier")
 
 
 /*
  * Initialize from nib with class name located in main bundle.
  */
 
-let someView7 = SomeView.VT_viewFromNibWithClassNameLocatedInMainBundle()
+let someView7 = SomeView.vt_viewFromNibWithClassNameLocatedInMainBundle()
 
 
 /*
@@ -95,8 +95,7 @@ let someView7 = SomeView.VT_viewFromNibWithClassNameLocatedInMainBundle()
  * In this case view will be loaded from main bundle too.
  */
 
-let someView8 = SomeView.VT_viewFromNibWithClassNameLocatedInBundleWithIdentifier(nil)
-
+let someView8 = SomeView.vt_view(fromNibWithClassNameLocatedInBundleWithIdentifier: nil)
 ```
 
 ### Layout
@@ -108,27 +107,26 @@ let someView8 = SomeView.VT_viewFromNibWithClassNameLocatedInBundleWithIdentifie
  * Fit view in container.
  */
 
-let someView = SomeView.VT_viewFromNibWithClassNameLocatedInMainBundle()
-someView.VT_fillView(containerView)
+let someView = SomeView.vt_viewFromNibWithClassNameLocatedInMainBundle()
+someView.vt_fill(view: containerView)
 
 /*
  * Fit view in superview.
  */
 
-someView.VT_fillView(someView.superview!)
+someView.vt_fill(view: someView.superview!)
 
 /*
  * Locate view in center of container.
  */
 
-someView.VT_locateInCenterOfView(containerView)
+someView.vt_locate(inCenterOfView: containerView)
 
 /*
  * Do the same thing with superview.
  */
 
-someView.VT_locateInCenterOfView(someView.superview!)
-
+someView.vt_locate(inCenterOfView: someView.superview!)
 ```
 
 ### Navigation
@@ -170,10 +168,10 @@ And this is how you can handle the same task with `VTNavigationManager`:
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Create window and display view controller
 
-    VTNavigationManager.sharedNavigationManager().createWindowOfType(UIWindow.self, andMakeItKeyAndVisible: true) { (window) -> Void in
+    VTNavigationManager.shared.create(windowOfType: UIWindow.self, andMakeItKeyAndVisible: true) { (window) -> Void in
         window.backgroundColor = .whiteColor()
         self.window = window
-    }.switchToNavigationControllerOfType(UINavigationController.self) { (navigationController) -> Void in
+    }.move(toNavigationControllerOfType: UINavigationController.self) { (navigationController) -> Void in
         let someViewController = SomeViewController()
         navigationController.viewControllers = [someViewController]
         navigationController.navigationBarHidden = true
@@ -189,7 +187,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 What's the difference? First of all, `VTNavigationManager` adds more flexibility to your code. In example above, there are two methods which were called on `VTNavigationManager`'s shared instance. The first method creates new window:
 
 ```swift
-VTNavigationManager.sharedNavigationManager().createWindowOfType(UIWindow.self, andMakeItKeyAndVisible: true) { (window) -> Void in
+VTNavigationManager.shared.create(windowOfType: UIWindow.self, andMakeItKeyAndVisible: true) { (window) -> Void in
     window.backgroundColor = .whiteColor()
     self.window = window
 }
@@ -204,7 +202,7 @@ The last parameter is a configuration block which allows you to prepare window b
 Next method creates navigation controller:
 
 ```swift
-.switchToNavigationControllerOfType(UINavigationController.self) { (navigationController) -> Void in
+.move(toNavigationControllerOfType: UINavigationController.self) { (navigationController) -> Void in
     let someViewController = SomeViewController()
     navigationController.viewControllers = [someViewController]
     navigationController.navigationBarHidden = true
@@ -222,7 +220,7 @@ navigationController.navigationBarHidden = true
 If you want to use your custom class for navigation bar or toolbar inside of navigation controller, there's another method:
 
 ```swift
-.switchToNavigationControllerOfType(UINavigationController.self, withNavigationBarOfType: UINavigationBar.self, toolbarOfType: UIToolbar.self) { (navigationController) -> Void in
+.move(toNavigationControllerOfType: UINavigationController.self, withNavigationBarOfType: UINavigationBar.self, toolbarOfType: UIToolbar.self) { (navigationController) -> Void in
     let someViewController = SomeViewController()
     navigationController.viewControllers = [someViewController]
     navigationController.navigationBarHidden = true
@@ -234,12 +232,12 @@ The first parameter is type of navigation controller. The second parameter is a 
 Sometimes you might need to display some view on the entire screen above all other views. Usually, this task could be solved by adding view to key `UIWindow` instance. `Visuality` has flexible solution for this case:
 
 ```swift
-VTNavigationManager.sharedNavigationManager().addViewToKeyWindowAnimated(fullScreenView, withDuration: 2.0, prepareForAnimationBlock: { (view, window) -> Void in
+VTNavigationManager.shared.add(view: fullScreenView, toKeyWindowFromApplication: UIApplication.shared, animated: true, withDuration: 2.0, prepareForAnimation: { (view, window) in
     view.frame = window.bounds
     view.alpha = 0.0
-}, animationBlock: { (view, window) -> Void in
+}, animationBlock: { (view, window) in
     view.alpha = 1.0
-}) { (finished) -> Void in
+}) { (finished) in
 }
 ```
 
@@ -248,7 +246,7 @@ This method allows you to display view on the screen animatedly. First parameter
 If you don't need to program animation for view's appearance, you can use another version of this method:
 
 ```swift
-VTNavigationManager.sharedNavigationManager().addViewToKeyWindow(fullScreenView) { (view, window) -> Void in
+VTNavigationManager.shared.add(view: fullScreenView, toKeyWindowFromApplication: UIApplication.shared) { (view, window) in
     view.backgroundColor = .whiteColor()
 }
 ```
@@ -258,20 +256,21 @@ This method takes only two parameters: the view itself and configuration block w
 All navigation methods of `VTNavigationManager` returns manager's object, so you can write code with chain:
 
 ```swift
-VTNavigationManager.sharedNavigationManager().createWindowOfType(UIWindow.self, andMakeItKeyAndVisible: true) { (window) -> Void in
+VTNavigationManager.sharedNavigationManager().create(windowOfType: UIWindow.self, andMakeItKeyAndVisible: true) { (window) -> Void in
     window.backgroundColor = .whiteColor()
     self.window = window
-}.switchToNavigationControllerOfType(UINavigationController.self) { (navigationController) -> Void in
+}.move(toNavigationControllerOfType: UINavigationController.self) { (navigationController) -> Void in
     let someViewController = SomeViewController()
     navigationController.viewControllers = [someViewController]
     navigationController.navigationBarHidden = true
-}.addViewToKeyWindowAnimated(fullScreenView, withDuration: 2.0, prepareForAnimationBlock: { (view, window) -> Void in
+}.add(view: fullScreenView, toKeyWindowFromApplication: UIApplication.shared, animated: true, withDuration: 2.0, prepareForAnimation: { (view, window) in
     view.frame = window.bounds
     view.alpha = 0.0
-}, animationBlock: { (view, window) -> Void in
+}, animationBlock: { (view, window) in
     view.alpha = 1.0
-}) { (finished) -> Void in
-}.addViewToKeyWindow(otherFullScreenView) { (view, window) -> Void in
+}) { (finished) in
+}.add(view: otherFullScreenView, toKeyWindowFromApplication: UIApplication.shared) { (view, window) in
+    view.backgroundColor = .whiteColor()
 }
 ```
 
