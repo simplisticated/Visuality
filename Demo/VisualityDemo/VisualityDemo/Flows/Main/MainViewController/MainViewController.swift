@@ -22,12 +22,15 @@ class MainViewController: UIViewController {
     // MARK: Deinitializer
     
     deinit {
+        // Remove references
+        
+        _circleView = nil
     }
     
     
     // MARK: Outlets
     
-    @IBOutlet fileprivate weak var containerForCircleView: UIView!
+    @IBOutlet fileprivate weak var containerForCircleView: ContainerView!
     
     
     // MARK: Variables & properties
@@ -47,15 +50,12 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         
-        // Initialize container for circle view
-        
-        containerForCircleView.backgroundColor = .clear
-        
-        
         // Initialize circle view
         
-        _circleView = CircleView.VT_viewFromNibWithClassNameLocatedInMainBundle() as! CircleView
-        circleView.VT_fillView(view: containerForCircleView)
+        containerForCircleView.layer.masksToBounds = true
+        
+        containerForCircleView.setContentView(ofType: CircleView.self, fromNibWithClassNameLocatedInBundle: nil, withConfigurationBlock: { (contentView) in
+        })
     }
     
     override func didReceiveMemoryWarning() {
