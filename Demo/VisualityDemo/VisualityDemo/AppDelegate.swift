@@ -42,21 +42,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Create full screen view
         
-        let fullScreenView = FullScreenView.VT_viewFromNibWithClassNameLocatedInMainBundle()
+        let fullScreenView = FullScreenView.vt_viewFromNibWithClassNameLocatedInMainBundle()
         
         
         // Create window and display main screen
         
-        VTNavigationManager.shared.createWindow(ofType: UIWindow.self, andMakeItKeyAndVisible: true) { (window) in
+        VTNavigationManager.shared.create(windowOfType: UIWindow.self, andMakeItKeyAndVisible: true) { (window) in
             window.backgroundColor = .white
             self.window = window
-        }.switchToNavigationController(ofType: UINavigationController.self, inWindow: window!) { (navigationController) in
-            let mainViewController = MainViewController.VT_viewControllerFromNibWithClassNameLocatedInMainBundle() as! MainViewController
+        }.move(toNavigationControllerOfType: UINavigationController.self, inWindow: window!, withConfigurationBlock: { (navigationController) in
+            let mainViewController = MainViewController.vt_viewControllerFromNibWithClassNameLocatedInMainBundle() as! MainViewController
             
             navigationController.viewControllers = [
                 mainViewController
             ]
-        }.addView(view: fullScreenView, toKeyWindowFromApplication: UIApplication.shared, animated: true, withDuration: 2.0, prepareForAnimation: { (view, window) in
+        }).add(view: fullScreenView, toKeyWindowFromApplication: UIApplication.shared, animated: true, withDuration: 2.0, prepareForAnimation: { (view, window) in
             view.frame = window.bounds
             view.alpha = 0.0
         }, animationBlock: { (view, window) in

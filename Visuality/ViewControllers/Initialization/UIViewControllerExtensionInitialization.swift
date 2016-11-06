@@ -23,7 +23,7 @@ public extension UIViewController {
     
     - returns: View controller from nib with specified name which is located in specified bundle.
     */
-    public class func VT_viewController(fromNibWithName nibName: String, locatedInBundle bundle: Bundle?) -> UIViewController {
+    public class func vt_viewController(fromNibWithName nibName: String, locatedInBundle bundle: Bundle?) -> UIViewController {
         // Obtain bundle which is appropriate for usage
         
         let bundleToUse = bundle == nil ? Bundle.main : bundle!
@@ -31,7 +31,7 @@ public extension UIViewController {
         
         // Check whether nib exists in specified bundle
         
-        let nibExists = bundleToUse.VT_containsNib(withName: nibName)
+        let nibExists = bundleToUse.vt_contains(nibWithName: nibName)
         
         
         // Obtain result view controller
@@ -62,7 +62,7 @@ public extension UIViewController {
      
      - returns: View controller from nib with specified name which is located in bundle with specified identifier.
      */
-    public class func VT_viewController(fromNibWithName nibName: String, locatedInBundleWithIdentifier bundleIdentifier: String?) -> UIViewController {
+    public class func vt_viewController(fromNibWithName nibName: String, locatedInBundleWithIdentifier bundleIdentifier: String?) -> UIViewController {
         // Obtain bundle which is appropriate for usage
         
         let bundleToUse = bundleIdentifier == nil ? Bundle.main : Bundle(identifier: bundleIdentifier!)
@@ -70,7 +70,7 @@ public extension UIViewController {
         
         // Obtain result view controller
         
-        let resultViewController = VT_viewController(fromNibWithName: nibName, locatedInBundle: bundleToUse)
+        let resultViewController = vt_viewController(fromNibWithName: nibName, locatedInBundle: bundleToUse)
         
         
         // Return result
@@ -86,7 +86,7 @@ public extension UIViewController {
      
      - returns: View controller from nib with specified name which is located in main bundle.
      */
-    public class func VT_viewController(fromNibLocatedInMainBundleWithNibName nibName: String) -> UIViewController {
+    public class func vt_viewController(fromNibLocatedInMainBundleWithNibName nibName: String) -> UIViewController {
         // Obtain bundle
         
         let bundleToUse = Bundle.main
@@ -94,7 +94,7 @@ public extension UIViewController {
         
         // Obtain result view controller
         
-        let resultViewController = VT_viewController(fromNibWithName: nibName, locatedInBundle: bundleToUse)
+        let resultViewController = vt_viewController(fromNibWithName: nibName, locatedInBundle: bundleToUse)
         
         
         // Return result
@@ -110,15 +110,15 @@ public extension UIViewController {
      
      - returns: View controller from nib which name is equal to view's class name and which is located in specified bundle.
      */
-    public class func VT_viewController(fromNibWithClassNameLocatedInBundle bundle: Bundle?) -> UIViewController {
+    public class func vt_viewController(fromNibWithClassNameLocatedInBundle bundle: Bundle?) -> UIViewController {
         // Obtain nib name
         
-        let nibName = VT_classNameWithoutNamespace()
+        let nibName = vt_classNameWithoutNamespace()
         
         
         // Obtain result view controller
         
-        let resultViewController = VT_viewController(fromNibWithName: nibName, locatedInBundle: bundle)
+        let resultViewController = vt_viewController(fromNibWithName: nibName, locatedInBundle: bundle)
         
         
         // Return result
@@ -134,10 +134,10 @@ public extension UIViewController {
      
      - returns: View controller from nib which name is equal to view's class name and which is located in bundle with specified identifier.
      */
-    public class func VT_viewController(fromNibWithClassNameLocatedInBundleWithIdentifier bundleIdentifier: String?) -> UIViewController {
+    public class func vt_viewController(fromNibWithClassNameLocatedInBundleWithIdentifier bundleIdentifier: String?) -> UIViewController {
         // Obtain nib name
         
-        let nibName = VT_classNameWithoutNamespace()
+        let nibName = vt_classNameWithoutNamespace()
         
         
         // Obtain bundle which is appropriate for usage
@@ -147,7 +147,7 @@ public extension UIViewController {
         
         // Obtain result view controller
         
-        let resultViewController = VT_viewController(fromNibWithName: nibName, locatedInBundle: bundleToUse)
+        let resultViewController = vt_viewController(fromNibWithName: nibName, locatedInBundle: bundleToUse)
         
         
         // Return result
@@ -160,10 +160,10 @@ public extension UIViewController {
      
      - returns: View controller from nib which name is equal to view's class name and which is located in main bundle.
      */
-    public class func VT_viewControllerFromNibWithClassNameLocatedInMainBundle() -> UIViewController {
+    public class func vt_viewControllerFromNibWithClassNameLocatedInMainBundle() -> UIViewController {
         // Obtain nib name
         
-        let nibName = VT_classNameWithoutNamespace()
+        let nibName = vt_classNameWithoutNamespace()
         
         
         // Obtain bundle
@@ -173,7 +173,7 @@ public extension UIViewController {
         
         // Obtain result view controller
         
-        let resultViewController = VT_viewController(fromNibWithName: nibName, locatedInBundle: bundleToUse)
+        let resultViewController = vt_viewController(fromNibWithName: nibName, locatedInBundle: bundleToUse)
         
         
         // Return result

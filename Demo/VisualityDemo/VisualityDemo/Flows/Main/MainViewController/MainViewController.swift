@@ -52,8 +52,6 @@ class MainViewController: UIViewController {
         
         // Initialize circle view
         
-        containerForCircleView.layer.masksToBounds = true
-        
         containerForCircleView.setContentView(ofType: CircleView.self, fromNibWithClassNameLocatedInBundle: nil, withConfigurationBlock: { (contentView) in
         })
     }

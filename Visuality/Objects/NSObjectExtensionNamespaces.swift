@@ -12,12 +12,12 @@ internal extension NSObject {
     
     // MARK: Public class methods
     
-    internal class func VT_classNameWithNamespace() -> String {
+    internal class func vt_classNameWithNamespace() -> String {
         return NSStringFromClass(self)
     }
     
-    internal class func VT_classNameWithoutNamespace() -> String {
-        let classNameWithNamespace = VT_classNameWithNamespace()
+    internal class func vt_classNameWithoutNamespace() -> String {
+        let classNameWithNamespace = vt_classNameWithNamespace()
         let segments = classNameWithNamespace.components(separatedBy: ".")
         let classNameWithoutNamespace = segments.last ?? ""
         return classNameWithoutNamespace

@@ -23,7 +23,7 @@ public extension UIView {
     
     - returns: View from nib with specified name which is located in specified bundle.
     */
-    public class func VT_view(fromNibWithName nibName: String, locatedInBundle bundle: Bundle?) -> UIView {
+    public class func vt_view(fromNibWithName nibName: String, locatedInBundle bundle: Bundle?) -> UIView {
         // Obtain bundle which is appropriate for usage
         
         let bundleToUse = bundle == nil ? Bundle.main : bundle!
@@ -31,7 +31,7 @@ public extension UIView {
         
         // Check whether nib exists in specified bundle
         
-        let nibExists = bundleToUse.VT_containsNib(withName: nibName)
+        let nibExists = bundleToUse.vt_contains(nibWithName: nibName)
         
         
         // Obtain result view
@@ -39,7 +39,7 @@ public extension UIView {
         var resultView: UIView? = nil
         
         if nibExists {
-            resultView = bundleToUse.VT_loadView(withClass: self, fromNibWithName: nibName)
+            resultView = bundleToUse.vt_load(viewWithClass: self, fromNibWithName: nibName)
         }
         
         if resultView == nil {
@@ -62,7 +62,7 @@ public extension UIView {
     
     - returns: View from nib with specified name which is located in bundle with specified identifier.
     */
-    public class func VT_view(fromNibWithName nibName: String, locatedInBundleWithIdentifier bundleIdentifier: String?) -> UIView {
+    public class func vt_view(fromNibWithName nibName: String, locatedInBundleWithIdentifier bundleIdentifier: String?) -> UIView {
         // Obtain bundle which is appropriate for usage
         
         let bundleToUse = bundleIdentifier == nil ? Bundle.main : Bundle(identifier: bundleIdentifier!)
@@ -70,7 +70,7 @@ public extension UIView {
         
         // Obtain result view
         
-        let resultView = VT_view(fromNibWithName: nibName, locatedInBundle: bundleToUse)
+        let resultView = vt_view(fromNibWithName: nibName, locatedInBundle: bundleToUse)
         
         
         // Return result
@@ -86,7 +86,7 @@ public extension UIView {
     
     - returns: View from nib with specified name which is located in main bundle.
     */
-    public class func VT_view(fromNibLocatedInMainBundleWithNibName nibName: String) -> UIView {
+    public class func vt_view(fromNibLocatedInMainBundleWithNibName nibName: String) -> UIView {
         // Obtain bundle
         
         let bundleToUse = Bundle.main
@@ -94,7 +94,7 @@ public extension UIView {
         
         // Obtain result view
         
-        let resultView = VT_view(fromNibWithName: nibName, locatedInBundle: bundleToUse)
+        let resultView = vt_view(fromNibWithName: nibName, locatedInBundle: bundleToUse)
         
         
         // Return result
@@ -110,15 +110,15 @@ public extension UIView {
     
     - returns: View from nib which name is equal to view's class name and which is located in specified bundle.
     */
-    public class func VT_view(fromNibWithClassNameLocatedInBundle bundle: Bundle?) -> UIView {
+    public class func vt_view(fromNibWithClassNameLocatedInBundle bundle: Bundle?) -> UIView {
         // Obtain nib name
         
-        let nibName = VT_classNameWithoutNamespace()
+        let nibName = vt_classNameWithoutNamespace()
         
         
         // Obtain result view
         
-        let resultView = VT_view(fromNibWithName: nibName, locatedInBundle: bundle)
+        let resultView = vt_view(fromNibWithName: nibName, locatedInBundle: bundle)
         
         
         // Return result
@@ -134,10 +134,10 @@ public extension UIView {
     
     - returns: View from nib which name is equal to view's class name and which is located in bundle with specified identifier.
     */
-    public class func VT_view(fromNibWithClassNameLocatedInBundleWithIdentifier bundleIdentifier: String?) -> UIView {
+    public class func vt_view(fromNibWithClassNameLocatedInBundleWithIdentifier bundleIdentifier: String?) -> UIView {
         // Obtain nib name
         
-        let nibName = VT_classNameWithoutNamespace()
+        let nibName = vt_classNameWithoutNamespace()
         
         
         // Obtain bundle which is appropriate for usage
@@ -147,7 +147,7 @@ public extension UIView {
         
         // Obtain result view
         
-        let resultView = VT_view(fromNibWithName: nibName, locatedInBundle: bundleToUse)
+        let resultView = vt_view(fromNibWithName: nibName, locatedInBundle: bundleToUse)
         
         
         // Return result
@@ -160,10 +160,10 @@ public extension UIView {
     
     - returns: View from nib which name is equal to view's class name and which is located in main bundle.
     */
-    public class func VT_viewFromNibWithClassNameLocatedInMainBundle() -> UIView {
+    public class func vt_viewFromNibWithClassNameLocatedInMainBundle() -> UIView {
         // Obtain nib name
         
-        let nibName = VT_classNameWithoutNamespace()
+        let nibName = vt_classNameWithoutNamespace()
         
         
         // Obtain bundle
@@ -173,7 +173,7 @@ public extension UIView {
         
         // Obtain result view
         
-        let resultView = VT_view(fromNibWithName: nibName, locatedInBundle: bundleToUse)
+        let resultView = vt_view(fromNibWithName: nibName, locatedInBundle: bundleToUse)
         
         
         // Return result

@@ -45,7 +45,7 @@ public class VTNavigationManager: NSObject {
     // MARK: Public methods
     
     @discardableResult
-    public func createWindow<WindowType: UIWindow>(ofType windowType: WindowType.Type, andMakeItKeyAndVisible makeKeyAndVisible: Bool, withConfigurationBlock configurationBlock: ((_ window: WindowType) -> Void)?) -> VTNavigationManager {
+    public func create<WindowType: UIWindow>(windowOfType windowType: WindowType.Type, andMakeItKeyAndVisible makeKeyAndVisible: Bool, withConfigurationBlock configurationBlock: ((_ window: WindowType) -> Void)?) -> VTNavigationManager {
         // Obtain frame for window
         
         let frameForWindow = UIScreen.main.bounds
@@ -74,7 +74,7 @@ public class VTNavigationManager: NSObject {
     }
     
     @discardableResult
-    public func switchToNavigationController<NavigationControllerType: UINavigationController>(ofType navigationControllerType: NavigationControllerType.Type, withNavigationBarOfType navigationBarType: UINavigationBar.Type, toolbarOfType toolbarType: UIToolbar.Type, inWindow window: UIWindow, andConfigurationBlock configurationBlock: ((_ navigationController: NavigationControllerType) -> Void)?) -> VTNavigationManager {
+    public func move<NavigationControllerType: UINavigationController>(toNavigationControllerOfType navigationControllerType: NavigationControllerType.Type, withNavigationBarOfType navigationBarType: UINavigationBar.Type, toolbarOfType toolbarType: UIToolbar.Type, inWindow window: UIWindow, andConfigurationBlock configurationBlock: ((_ navigationController: NavigationControllerType) -> Void)?) -> VTNavigationManager {
         // Create navigation controller
         
         let navigationController = navigationControllerType.init(navigationBarClass: navigationBarType, toolbarClass: toolbarType)
@@ -96,7 +96,7 @@ public class VTNavigationManager: NSObject {
     }
     
     @discardableResult
-    public func switchToNavigationController<NavigationControllerType: UINavigationController>(ofType navigationControllerType: NavigationControllerType.Type, inWindow window: UIWindow, withConfigurationBlock configurationBlock: ((_ navigationController: NavigationControllerType) -> Void)?) -> VTNavigationManager {
+    public func move<NavigationControllerType: UINavigationController>(toNavigationControllerOfType navigationControllerType: NavigationControllerType.Type, inWindow window: UIWindow, withConfigurationBlock configurationBlock: ((_ navigationController: NavigationControllerType) -> Void)?) -> VTNavigationManager {
         // Obtain navigation bar type
         
         let navigationBarType = UINavigationBar.self
@@ -109,9 +109,9 @@ public class VTNavigationManager: NSObject {
         
         // Switch to navigation controller
         
-        switchToNavigationController(ofType: navigationControllerType, withNavigationBarOfType: navigationBarType, toolbarOfType: toolbarType, inWindow: window) { (navigationController) in
+        move(toNavigationControllerOfType: navigationControllerType, withNavigationBarOfType: navigationBarType, toolbarOfType: toolbarType, inWindow: window, andConfigurationBlock: { (navigationController) in
             configurationBlock?(navigationController)
-        }
+        })
         
         
         // Return result
@@ -120,7 +120,7 @@ public class VTNavigationManager: NSObject {
     }
     
     @discardableResult
-    public func addView(view: UIView, toKeyWindowFromApplication application: UIApplication, withConfigurationBlock configurationBlock: ((_ view: UIView, _ window: UIWindow?) -> Void)?) -> VTNavigationManager {
+    public func add(view: UIView, toKeyWindowFromApplication application: UIApplication, withConfigurationBlock configurationBlock: ((_ view: UIView, _ window: UIWindow?) -> Void)?) -> VTNavigationManager {
         // Obtain key window
         
         let keyWindow = application.keyWindow
@@ -146,7 +146,7 @@ public class VTNavigationManager: NSObject {
     }
     
     @discardableResult
-    public func addView(view: UIView, toKeyWindowFromApplication application: UIApplication, animated: Bool, withDuration duration: TimeInterval, prepareForAnimation: ((_ view: UIView, _ window: UIWindow) -> Void)?, animationBlock: ((_ view: UIView, _ window: UIWindow) -> Void)?, andCompletion completion: ((_ finished: Bool) -> Void)?) -> VTNavigationManager {
+    public func add(view: UIView, toKeyWindowFromApplication application: UIApplication, animated: Bool, withDuration duration: TimeInterval, prepareForAnimation: ((_ view: UIView, _ window: UIWindow) -> Void)?, animationBlock: ((_ view: UIView, _ window: UIWindow) -> Void)?, andCompletion completion: ((_ finished: Bool) -> Void)?) -> VTNavigationManager {
         // Obtain key window
         
         let keyWindow = application.keyWindow

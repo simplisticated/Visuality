@@ -27,7 +27,7 @@ public extension Bundle {
     
     - returns: True if nib exists. Otherwise, returns false.
     */
-    public func VT_containsNib(withName nibName: String) -> Bool {
+    public func vt_contains(nibWithName nibName: String) -> Bool {
         // Obtain path for nib
         
         let pathForNib = path(forResource: nibName, ofType: "nib")
@@ -58,10 +58,10 @@ public extension Bundle {
     
     - returns: View with specified class loaded from nib with specified name.
     */
-    public func VT_loadView(withClass viewClass: UIView.Type, fromNibWithName nibName: String) -> UIView? {
+    public func vt_load(viewWithClass viewClass: UIView.Type, fromNibWithName nibName: String) -> UIView? {
         // Check for existance of nib
         
-        let nibExists = VT_containsNib(withName: nibName)
+        let nibExists = vt_contains(nibWithName: nibName)
         
         if (!nibExists) {
             return nil
@@ -73,8 +73,8 @@ public extension Bundle {
         let topLevelObjectsFromNib = loadNibNamed(nibName, owner: nil, options: nil) ?? [AnyObject]()
         
         let filteredTopLevelObjectsFromNib = topLevelObjectsFromNib.filter { (evaluatedObject) -> Bool in
-            let requiredClassName = viewClass.VT_classNameWithNamespace()
-            let evaluatedObjectClassName = (evaluatedObject as AnyObject).classForCoder.VT_classNameWithNamespace()
+            let requiredClassName = viewClass.vt_classNameWithNamespace()
+            let evaluatedObjectClassName = (evaluatedObject as AnyObject).classForCoder.vt_classNameWithNamespace()
             let classNameOfEvaluatedObjectIsEqualToRequiredClassName = evaluatedObjectClassName == requiredClassName
             return classNameOfEvaluatedObjectIsEqualToRequiredClassName
         }

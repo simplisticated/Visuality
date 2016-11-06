@@ -26,7 +26,7 @@ public extension UIView {
     - Parameters:
         - view: View that should be a superview for recipient.
     */
-    public func VT_fillView(view: UIView) {
+    public func vt_fill(view: UIView) {
         frame = view.bounds
         
         if view != superview {
@@ -41,7 +41,7 @@ public extension UIView {
     - Parameters:
     - view: View that should be a superview for recipient.
     */
-    public func VT_locateInCenterOfView(view: UIView) {
+    public func vt_locate(inCenterOfView view: UIView) {
         var frameForRecipient = frame
         frameForRecipient.origin.x = (view.frame.size.width - frameForRecipient.size.width) / 2.0
         frameForRecipient.origin.y = (view.frame.size.height - frameForRecipient.size.height) / 2.0
