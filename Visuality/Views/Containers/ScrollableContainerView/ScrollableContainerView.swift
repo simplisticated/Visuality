@@ -91,52 +91,6 @@ public class ScrollableContainerView: UIView {
         }
     }
     
-    fileprivate func setContentView(contentView: UIView?, forScrollDirection scrollDirection: ScrollableContainerViewScrollDirection) {
-        // Remove previous content view if needed
-        
-        if _contentView != nil {
-            _contentView!.removeFromSuperview()
-        }
-        
-        
-        // Update private variable
-        
-        _contentView = contentView
-        
-        
-        // Update internal scroll view
-        
-        if contentView == nil {
-            // Update container
-            
-            internalScrollView.contentSize = .zero
-        } else {
-            // Obtain frame for content view
-            
-            var frameForContentView: CGRect?
-            
-            switch scrollDirection {
-            case .horizontal:
-                frameForContentView = CGRect(x: 0.0, y: 0.0, width: contentView!.bounds.size.width, height: internalScrollView.bounds.size.height)
-                break
-            case .vertical:
-                frameForContentView = CGRect(x: 0.0, y: 0.0, width: internalScrollView.bounds.size.width, height: contentView!.bounds.size.height)
-                break
-            }
-            
-            
-            // Update content view
-            
-            contentView!.frame = frameForContentView!
-            
-            
-            // Update container
-            
-            internalScrollView.contentSize = frameForContentView!.size
-            internalScrollView.addSubview(contentView!)
-        }
-    }
-    
     
     // MARK: Public object methods
     
@@ -195,6 +149,52 @@ public class ScrollableContainerView: UIView {
         // Update view
         
         setNeedsLayout()
+    }
+    
+    fileprivate func setContentView(contentView: UIView?, forScrollDirection scrollDirection: ScrollableContainerViewScrollDirection) {
+        // Remove previous content view if needed
+        
+        if _contentView != nil {
+            _contentView!.removeFromSuperview()
+        }
+        
+        
+        // Update private variable
+        
+        _contentView = contentView
+        
+        
+        // Update internal scroll view
+        
+        if contentView == nil {
+            // Update container
+            
+            internalScrollView.contentSize = .zero
+        } else {
+            // Obtain frame for content view
+            
+            var frameForContentView: CGRect?
+            
+            switch scrollDirection {
+            case .horizontal:
+                frameForContentView = CGRect(x: 0.0, y: 0.0, width: contentView!.bounds.size.width, height: internalScrollView.bounds.size.height)
+                break
+            case .vertical:
+                frameForContentView = CGRect(x: 0.0, y: 0.0, width: internalScrollView.bounds.size.width, height: contentView!.bounds.size.height)
+                break
+            }
+            
+            
+            // Update content view
+            
+            contentView!.frame = frameForContentView!
+            
+            
+            // Update container
+            
+            internalScrollView.contentSize = frameForContentView!.size
+            internalScrollView.addSubview(contentView!)
+        }
     }
     
     
