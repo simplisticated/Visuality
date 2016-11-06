@@ -35,6 +35,9 @@ public class ContainerView: UIView {
     // MARK: Deinitializer
     
     deinit {
+        // Remove references
+        
+        _contentView = nil
     }
     
     
@@ -43,7 +46,7 @@ public class ContainerView: UIView {
     
     // MARK: Object variables & properties
     
-    private var _contentView: UIView?
+    fileprivate var _contentView: UIView?
     
     public var contentView: UIView? {
         get {
@@ -83,7 +86,7 @@ public class ContainerView: UIView {
         contentView?.frame = bounds
     }
     
-    public func setContentView<ContentViewType: UIView>(contentViewType: ContentViewType.Type, fromNibWithClassNameLocatedInBundle bundle: Bundle?, withConfigurationBlock configurationBlock: ((_ contentView: ContentViewType) -> Void)?) {
+    public func setContentView<ContentViewType: UIView>(ofType contentViewType: ContentViewType.Type, fromNibWithClassNameLocatedInBundle bundle: Bundle?, withConfigurationBlock configurationBlock: ((_ contentView: ContentViewType) -> Void)?) {
         // Create new content view
         
         let newContentView = ContentViewType.VT_view(fromNibWithClassNameLocatedInBundle: bundle) as! ContentViewType
@@ -102,7 +105,7 @@ public class ContainerView: UIView {
     
     // MARK: Private object methods
     
-    private func customInitialization() {
+    fileprivate func customInitialization() {
         // Initialize view
         
         backgroundColor = .clear

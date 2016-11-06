@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		691A6BB41DCEEDD800AC8315 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A6BB21DCEEDD800AC8315 /* ContainerView.swift */; };
+		691A6BB61DCEEE1200AC8315 /* ScrollableContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A6BB51DCEEE1200AC8315 /* ScrollableContainerView.swift */; };
+		691A6BB81DCEEE3D00AC8315 /* ScrollableContainerViewScrollDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A6BB71DCEEE3D00AC8315 /* ScrollableContainerViewScrollDirection.swift */; };
 		694A60251BB0A056007D2837 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A60241BB0A056007D2837 /* AppDelegate.swift */; };
 		694A602C1BB0A056007D2837 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 694A602B1BB0A056007D2837 /* Assets.xcassets */; };
 		694A602F1BB0A056007D2837 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 694A602D1BB0A056007D2837 /* LaunchScreen.storyboard */; };
@@ -22,7 +25,6 @@
 		69C26ED21D941D1C005CE3ED /* VTNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C26EC41D941D1C005CE3ED /* VTNavigationManager.swift */; };
 		69C26ED31D941D1C005CE3ED /* NSObjectExtensionNamespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C26EC61D941D1C005CE3ED /* NSObjectExtensionNamespaces.swift */; };
 		69C26ED41D941D1C005CE3ED /* UIViewControllerExtensionInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C26EC91D941D1C005CE3ED /* UIViewControllerExtensionInitialization.swift */; };
-		69C26ED51D941D1C005CE3ED /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C26ECC1D941D1C005CE3ED /* ContainerView.swift */; };
 		69C26ED61D941D1C005CE3ED /* UIViewExtensionInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C26ECE1D941D1C005CE3ED /* UIViewExtensionInitialization.swift */; };
 		69C26ED71D941D1C005CE3ED /* NSBundleExtensionContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C26ECF1D941D1C005CE3ED /* NSBundleExtensionContent.swift */; };
 		69C26ED81D941D1C005CE3ED /* UIViewExtensionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C26ED11D941D1C005CE3ED /* UIViewExtensionLayout.swift */; };
@@ -46,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		691A6BB21DCEEDD800AC8315 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		691A6BB51DCEEE1200AC8315 /* ScrollableContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableContainerView.swift; sourceTree = "<group>"; };
+		691A6BB71DCEEE3D00AC8315 /* ScrollableContainerViewScrollDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableContainerViewScrollDirection.swift; sourceTree = "<group>"; };
 		694A60211BB0A056007D2837 /* VisualityDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualityDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		694A60241BB0A056007D2837 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		694A602B1BB0A056007D2837 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,7 +72,6 @@
 		69C26EC41D941D1C005CE3ED /* VTNavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VTNavigationManager.swift; sourceTree = "<group>"; };
 		69C26EC61D941D1C005CE3ED /* NSObjectExtensionNamespaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionNamespaces.swift; sourceTree = "<group>"; };
 		69C26EC91D941D1C005CE3ED /* UIViewControllerExtensionInitialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensionInitialization.swift; sourceTree = "<group>"; };
-		69C26ECC1D941D1C005CE3ED /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		69C26ECE1D941D1C005CE3ED /* UIViewExtensionInitialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionInitialization.swift; sourceTree = "<group>"; };
 		69C26ECF1D941D1C005CE3ED /* NSBundleExtensionContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundleExtensionContent.swift; sourceTree = "<group>"; };
 		69C26ED11D941D1C005CE3ED /* UIViewExtensionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionLayout.swift; sourceTree = "<group>"; };
@@ -98,6 +102,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		691A6BB01DCEEDD800AC8315 /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				691A6BB11DCEEDD800AC8315 /* ContainerView */,
+				691A6BB31DCEEDD800AC8315 /* ScrollableContainerView */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		691A6BB11DCEEDD800AC8315 /* ContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				691A6BB21DCEEDD800AC8315 /* ContainerView.swift */,
+			);
+			path = ContainerView;
+			sourceTree = "<group>";
+		};
+		691A6BB31DCEEDD800AC8315 /* ScrollableContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				691A6BB51DCEEE1200AC8315 /* ScrollableContainerView.swift */,
+				691A6BB71DCEEE3D00AC8315 /* ScrollableContainerViewScrollDirection.swift */,
+			);
+			path = ScrollableContainerView;
+			sourceTree = "<group>";
+		};
 		694A60181BB0A056007D2837 = {
 			isa = PBXGroup;
 			children = (
@@ -282,19 +312,11 @@
 		69C26ECA1D941D1C005CE3ED /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				69C26ECB1D941D1C005CE3ED /* Containers */,
+				691A6BB01DCEEDD800AC8315 /* Containers */,
 				69C26ECD1D941D1C005CE3ED /* Initialization */,
 				69C26ED01D941D1C005CE3ED /* Layout */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		69C26ECB1D941D1C005CE3ED /* Containers */ = {
-			isa = PBXGroup;
-			children = (
-				69C26ECC1D941D1C005CE3ED /* ContainerView.swift */,
-			);
-			path = Containers;
 			sourceTree = "<group>";
 		};
 		69C26ECD1D941D1C005CE3ED /* Initialization */ = {
@@ -451,14 +473,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				694A60731BB0B230007D2837 /* CircleView.swift in Sources */,
+				691A6BB61DCEEE1200AC8315 /* ScrollableContainerView.swift in Sources */,
 				694DB7D41BB0CAF5002FD338 /* UIColorExtensionListOfColors.swift in Sources */,
-				69C26ED51D941D1C005CE3ED /* ContainerView.swift in Sources */,
 				69C26ED71D941D1C005CE3ED /* NSBundleExtensionContent.swift in Sources */,
 				69C26ED41D941D1C005CE3ED /* UIViewControllerExtensionInitialization.swift in Sources */,
 				69C26ED31D941D1C005CE3ED /* NSObjectExtensionNamespaces.swift in Sources */,
 				694A60251BB0A056007D2837 /* AppDelegate.swift in Sources */,
 				69C26ED21D941D1C005CE3ED /* VTNavigationManager.swift in Sources */,
 				694A60571BB0A09A007D2837 /* MainViewController.swift in Sources */,
+				691A6BB41DCEEDD800AC8315 /* ContainerView.swift in Sources */,
+				691A6BB81DCEEE3D00AC8315 /* ScrollableContainerViewScrollDirection.swift in Sources */,
 				69C26ED61D941D1C005CE3ED /* UIViewExtensionInitialization.swift in Sources */,
 				69C26ED81D941D1C005CE3ED /* UIViewExtensionLayout.swift in Sources */,
 				696633561BB4182F00CBCFB4 /* FullScreenView.swift in Sources */,
