@@ -1,6 +1,6 @@
 //
 //  ScrollableContainerView.swift
-//  VisualityDemo
+//  Visuality
 //
 //  Created by Igor Matyushkin on 06.11.16.
 //  Copyright © 2016 Igor Matyushkin. All rights reserved.
@@ -41,6 +41,7 @@ public class ScrollableContainerView: UIView {
     deinit {
         // Remove references
         
+        lastContentSize = nil
         _internalScrollView = nil
         _contentView = nil
         _scrollDirection = nil
@@ -51,6 +52,8 @@ public class ScrollableContainerView: UIView {
     
     
     // MARK: Object variables & properties
+    
+    fileprivate var lastContentSize: CGSize!
     
     fileprivate var _internalScrollView: UIScrollView!
     
@@ -101,6 +104,13 @@ public class ScrollableContainerView: UIView {
         // Update internal scroll view
         
         internalScrollView.frame = bounds
+        
+        let contentSizeForInternalScrollView = obtain(contentSizeForContentView: contentView, andScrollDirection: scrollDirection)
+        
+        if contentSizeForInternalScrollView != lastContentSize {
+            internalScrollView.contentSize = contentSizeForInternalScrollView
+            lastContentSize = contentSizeForInternalScrollView
+        }
     }
     
     public func setContentView<ContentViewType: UIView>(ofType contentViewType: ContentViewType.Type, fromNibWithClassNameLocatedInBundle bundle: Bundle?, withScrollDirection scrollDirection: ScrollableContainerViewScrollDirection, andConfigurationBlock configurationBlock: ((_ contentView: ContentViewType) -> Void)?) {
@@ -138,6 +148,10 @@ public class ScrollableContainerView: UIView {
         _internalScrollView = UIScrollView(frame: bounds)
         internalScrollView.backgroundColor = .clear
         
+        let contentSizeForInternalScrollView: CGSize = .zero
+        lastContentSize = contentSizeForInternalScrollView
+        internalScrollView.contentSize = contentSizeForInternalScrollView
+        
         addSubview(internalScrollView)
         
         
@@ -149,6 +163,33 @@ public class ScrollableContainerView: UIView {
         // Update view
         
         setNeedsLayout()
+    }
+    
+    fileprivate func obtain(frameForContentView contentView: UIView?, andScrollDirection scrollDirection: ScrollableContainerViewScrollDirection) -> CGRect {
+        if contentView == nil {
+            return .zero
+        } else {
+            // Obtain frame for content view
+            
+            var frameForContentView: CGRect?
+            
+            switch scrollDirection {
+            case .horizontal:
+                frameForContentView = CGRect(x: 0.0, y: 0.0, width: contentView!.bounds.size.width, height: internalScrollView.bounds.size.height)
+                break
+            case .vertical:
+                frameForContentView = CGRect(x: 0.0, y: 0.0, width: internalScrollView.bounds.size.width, height: contentView!.bounds.size.height)
+                break
+            }
+            
+            return frameForContentView!
+        }
+    }
+    
+    fileprivate func obtain(contentSizeForContentView contentView: UIView?, andScrollDirection scrollDirection: ScrollableContainerViewScrollDirection) -> CGSize {
+        let frameForContentView = obtain(frameForContentView: contentView, andScrollDirection: scrollDirection)
+        let requiredContentSize = frameForContentView.size
+        return requiredContentSize
     }
     
     fileprivate func setContentView(contentView: UIView?, forScrollDirection scrollDirection: ScrollableContainerViewScrollDirection) {
@@ -166,11 +207,7 @@ public class ScrollableContainerView: UIView {
         
         // Update internal scroll view
         
-        if contentView == nil {
-            // Update container
-            
-            internalScrollView.contentSize = .zero
-        } else {
+        if contentView != nil {
             // Obtain frame for content view
             
             var frameForContentView: CGRect?
@@ -192,8 +229,12 @@ public class ScrollableContainerView: UIView {
             
             // Update container
             
-            internalScrollView.contentSize = frameForContentView!.size
             internalScrollView.addSubview(contentView!)
+            
+            
+            // Update view
+            
+            setNeedsLayout()
         }
     }
     
