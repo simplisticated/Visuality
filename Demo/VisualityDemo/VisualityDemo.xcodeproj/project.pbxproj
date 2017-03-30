@@ -19,15 +19,15 @@
 		694A60581BB0A09A007D2837 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 694A60561BB0A09A007D2837 /* MainViewController.xib */; };
 		694A60731BB0B230007D2837 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A60721BB0B230007D2837 /* CircleView.swift */; };
 		694DB7C11BB0B8D6002FD338 /* CircleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 694DB7C01BB0B8D6002FD338 /* CircleView.xib */; };
-		694DB7D41BB0CAF5002FD338 /* UIColorExtensionListOfColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694DB7D31BB0CAF5002FD338 /* UIColorExtensionListOfColors.swift */; };
+		695DFF371E8CBCC5001EFA96 /* UIColorExtensionListOfColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695DFF361E8CBCC5001EFA96 /* UIColorExtensionListOfColors.swift */; };
+		695DFF421E8CBD54001EFA96 /* NSBundleExtensionContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695DFF3A1E8CBD54001EFA96 /* NSBundleExtensionContent.swift */; };
+		695DFF431E8CBD54001EFA96 /* NSObjectExtensionNamespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695DFF3C1E8CBD54001EFA96 /* NSObjectExtensionNamespaces.swift */; };
+		695DFF441E8CBD54001EFA96 /* UIViewExtensionInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695DFF3E1E8CBD54001EFA96 /* UIViewExtensionInitialization.swift */; };
+		695DFF451E8CBD54001EFA96 /* UIViewExtensionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695DFF3F1E8CBD54001EFA96 /* UIViewExtensionLayout.swift */; };
+		695DFF461E8CBD54001EFA96 /* UIViewControllerExtensionInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695DFF411E8CBD54001EFA96 /* UIViewControllerExtensionInitialization.swift */; };
 		696633561BB4182F00CBCFB4 /* FullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696633551BB4182F00CBCFB4 /* FullScreenView.swift */; };
 		696633581BB4183B00CBCFB4 /* FullScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 696633571BB4183B00CBCFB4 /* FullScreenView.xib */; };
 		69C26ED21D941D1C005CE3ED /* VTNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C26EC41D941D1C005CE3ED /* VTNavigationManager.swift */; };
-		69C26ED31D941D1C005CE3ED /* NSObjectExtensionNamespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C26EC61D941D1C005CE3ED /* NSObjectExtensionNamespaces.swift */; };
-		69C26ED41D941D1C005CE3ED /* UIViewControllerExtensionInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C26EC91D941D1C005CE3ED /* UIViewControllerExtensionInitialization.swift */; };
-		69C26ED61D941D1C005CE3ED /* UIViewExtensionInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C26ECE1D941D1C005CE3ED /* UIViewExtensionInitialization.swift */; };
-		69C26ED71D941D1C005CE3ED /* NSBundleExtensionContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C26ECF1D941D1C005CE3ED /* NSBundleExtensionContent.swift */; };
-		69C26ED81D941D1C005CE3ED /* UIViewExtensionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C26ED11D941D1C005CE3ED /* UIViewExtensionLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,15 +66,15 @@
 		694A60561BB0A09A007D2837 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		694A60721BB0B230007D2837 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		694DB7C01BB0B8D6002FD338 /* CircleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleView.xib; sourceTree = "<group>"; };
-		694DB7D31BB0CAF5002FD338 /* UIColorExtensionListOfColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionListOfColors.swift; sourceTree = "<group>"; };
+		695DFF361E8CBCC5001EFA96 /* UIColorExtensionListOfColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionListOfColors.swift; sourceTree = "<group>"; };
+		695DFF3A1E8CBD54001EFA96 /* NSBundleExtensionContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundleExtensionContent.swift; sourceTree = "<group>"; };
+		695DFF3C1E8CBD54001EFA96 /* NSObjectExtensionNamespaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionNamespaces.swift; sourceTree = "<group>"; };
+		695DFF3E1E8CBD54001EFA96 /* UIViewExtensionInitialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionInitialization.swift; sourceTree = "<group>"; };
+		695DFF3F1E8CBD54001EFA96 /* UIViewExtensionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionLayout.swift; sourceTree = "<group>"; };
+		695DFF411E8CBD54001EFA96 /* UIViewControllerExtensionInitialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensionInitialization.swift; sourceTree = "<group>"; };
 		696633551BB4182F00CBCFB4 /* FullScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenView.swift; sourceTree = "<group>"; };
 		696633571BB4183B00CBCFB4 /* FullScreenView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullScreenView.xib; sourceTree = "<group>"; };
 		69C26EC41D941D1C005CE3ED /* VTNavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VTNavigationManager.swift; sourceTree = "<group>"; };
-		69C26EC61D941D1C005CE3ED /* NSObjectExtensionNamespaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionNamespaces.swift; sourceTree = "<group>"; };
-		69C26EC91D941D1C005CE3ED /* UIViewControllerExtensionInitialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensionInitialization.swift; sourceTree = "<group>"; };
-		69C26ECE1D941D1C005CE3ED /* UIViewExtensionInitialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionInitialization.swift; sourceTree = "<group>"; };
-		69C26ECF1D941D1C005CE3ED /* NSBundleExtensionContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundleExtensionContent.swift; sourceTree = "<group>"; };
-		69C26ED11D941D1C005CE3ED /* UIViewExtensionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,9 +235,61 @@
 		694DB7D21BB0CAE1002FD338 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				694DB7D31BB0CAF5002FD338 /* UIColorExtensionListOfColors.swift */,
+				695DFF351E8CBCC5001EFA96 /* Color */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		695DFF351E8CBCC5001EFA96 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				695DFF361E8CBCC5001EFA96 /* UIColorExtensionListOfColors.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		695DFF381E8CBD54001EFA96 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				695DFF391E8CBD54001EFA96 /* Bundle */,
+				695DFF3B1E8CBD54001EFA96 /* Object */,
+				695DFF3D1E8CBD54001EFA96 /* View */,
+				695DFF401E8CBD54001EFA96 /* ViewController */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		695DFF391E8CBD54001EFA96 /* Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				695DFF3A1E8CBD54001EFA96 /* NSBundleExtensionContent.swift */,
+			);
+			path = Bundle;
+			sourceTree = "<group>";
+		};
+		695DFF3B1E8CBD54001EFA96 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				695DFF3C1E8CBD54001EFA96 /* NSObjectExtensionNamespaces.swift */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
+		695DFF3D1E8CBD54001EFA96 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				695DFF3E1E8CBD54001EFA96 /* UIViewExtensionInitialization.swift */,
+				695DFF3F1E8CBD54001EFA96 /* UIViewExtensionLayout.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		695DFF401E8CBD54001EFA96 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				695DFF411E8CBD54001EFA96 /* UIViewControllerExtensionInitialization.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		696633541BB4182500CBCFB4 /* FullScreenView */ = {
@@ -260,9 +312,8 @@
 		69C26EC11D941D1C005CE3ED /* Visuality */ = {
 			isa = PBXGroup;
 			children = (
+				695DFF381E8CBD54001EFA96 /* Extensions */,
 				69C26EC21D941D1C005CE3ED /* Navigation */,
-				69C26EC51D941D1C005CE3ED /* Objects */,
-				69C26EC71D941D1C005CE3ED /* ViewControllers */,
 				69C26ECA1D941D1C005CE3ED /* Views */,
 			);
 			name = Visuality;
@@ -285,55 +336,12 @@
 			path = NavigationManager;
 			sourceTree = "<group>";
 		};
-		69C26EC51D941D1C005CE3ED /* Objects */ = {
-			isa = PBXGroup;
-			children = (
-				69C26EC61D941D1C005CE3ED /* NSObjectExtensionNamespaces.swift */,
-			);
-			path = Objects;
-			sourceTree = "<group>";
-		};
-		69C26EC71D941D1C005CE3ED /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				69C26EC81D941D1C005CE3ED /* Initialization */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		69C26EC81D941D1C005CE3ED /* Initialization */ = {
-			isa = PBXGroup;
-			children = (
-				69C26EC91D941D1C005CE3ED /* UIViewControllerExtensionInitialization.swift */,
-			);
-			path = Initialization;
-			sourceTree = "<group>";
-		};
 		69C26ECA1D941D1C005CE3ED /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				691A6BB01DCEEDD800AC8315 /* Containers */,
-				69C26ECD1D941D1C005CE3ED /* Initialization */,
-				69C26ED01D941D1C005CE3ED /* Layout */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		69C26ECD1D941D1C005CE3ED /* Initialization */ = {
-			isa = PBXGroup;
-			children = (
-				69C26ECE1D941D1C005CE3ED /* UIViewExtensionInitialization.swift */,
-				69C26ECF1D941D1C005CE3ED /* NSBundleExtensionContent.swift */,
-			);
-			path = Initialization;
-			sourceTree = "<group>";
-		};
-		69C26ED01D941D1C005CE3ED /* Layout */ = {
-			isa = PBXGroup;
-			children = (
-				69C26ED11D941D1C005CE3ED /* UIViewExtensionLayout.swift */,
-			);
-			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -472,19 +480,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				695DFF441E8CBD54001EFA96 /* UIViewExtensionInitialization.swift in Sources */,
+				695DFF451E8CBD54001EFA96 /* UIViewExtensionLayout.swift in Sources */,
 				694A60731BB0B230007D2837 /* CircleView.swift in Sources */,
 				691A6BB61DCEEE1200AC8315 /* ScrollableContainerView.swift in Sources */,
-				694DB7D41BB0CAF5002FD338 /* UIColorExtensionListOfColors.swift in Sources */,
-				69C26ED71D941D1C005CE3ED /* NSBundleExtensionContent.swift in Sources */,
-				69C26ED41D941D1C005CE3ED /* UIViewControllerExtensionInitialization.swift in Sources */,
-				69C26ED31D941D1C005CE3ED /* NSObjectExtensionNamespaces.swift in Sources */,
 				694A60251BB0A056007D2837 /* AppDelegate.swift in Sources */,
 				69C26ED21D941D1C005CE3ED /* VTNavigationManager.swift in Sources */,
+				695DFF461E8CBD54001EFA96 /* UIViewControllerExtensionInitialization.swift in Sources */,
 				694A60571BB0A09A007D2837 /* MainViewController.swift in Sources */,
 				691A6BB41DCEEDD800AC8315 /* ContainerView.swift in Sources */,
+				695DFF431E8CBD54001EFA96 /* NSObjectExtensionNamespaces.swift in Sources */,
 				691A6BB81DCEEE3D00AC8315 /* ScrollableContainerViewScrollDirection.swift in Sources */,
-				69C26ED61D941D1C005CE3ED /* UIViewExtensionInitialization.swift in Sources */,
-				69C26ED81D941D1C005CE3ED /* UIViewExtensionLayout.swift in Sources */,
+				695DFF371E8CBCC5001EFA96 /* UIColorExtensionListOfColors.swift in Sources */,
+				695DFF421E8CBD54001EFA96 /* NSBundleExtensionContent.swift in Sources */,
 				696633561BB4182F00CBCFB4 /* FullScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
