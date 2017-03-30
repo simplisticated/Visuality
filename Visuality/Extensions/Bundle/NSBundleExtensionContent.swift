@@ -58,7 +58,7 @@ public extension Bundle {
     
     - returns: View with specified class loaded from nib with specified name.
     */
-    public func vt_load(viewWithClass viewClass: UIView.Type, fromNibWithName nibName: String) -> UIView? {
+    public func vt_load<ViewType: UIView>(viewOfType viewType: ViewType.Type, fromNibWithName nibName: String) -> ViewType? {
         // Check for existance of nib
         
         let nibExists = vt_contains(nibWithName: nibName)
@@ -73,18 +73,18 @@ public extension Bundle {
         let topLevelObjectsFromNib = loadNibNamed(nibName, owner: nil, options: nil) ?? [AnyObject]()
         
         let filteredTopLevelObjectsFromNib = topLevelObjectsFromNib.filter { (evaluatedObject) -> Bool in
-            let requiredClassName = viewClass.vt_classNameWithNamespace()
+            let requiredClassName = viewType.vt_classNameWithNamespace()
             let evaluatedObjectClassName = (evaluatedObject as AnyObject).classForCoder.vt_classNameWithNamespace()
             let classNameOfEvaluatedObjectIsEqualToRequiredClassName = evaluatedObjectClassName == requiredClassName
             return classNameOfEvaluatedObjectIsEqualToRequiredClassName
         }
         
-        let resultView: UIView? = filteredTopLevelObjectsFromNib.first as? UIView
+        let resultView = filteredTopLevelObjectsFromNib.first as? ViewType
         
         
         // Return result view
         
-        return resultView;
+        return resultView
     }
     
     

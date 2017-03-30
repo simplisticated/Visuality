@@ -1,6 +1,6 @@
 //
 //  UIViewControllerExtensionInitialization.swift
-//  DisposableEmailClient
+//  Visuality
 //
 //  Created by Igor Matyushkin on 23.10.15.
 //  Copyright © 2015 Igor Matyushkin. All rights reserved.
@@ -23,10 +23,10 @@ public extension UIViewController {
     
     - returns: View controller from nib with specified name which is located in specified bundle.
     */
-    public class func vt_viewController(fromNibWithName nibName: String, locatedInBundle bundle: Bundle?) -> UIViewController {
+    public class func vt_viewController(fromNibWithName nibName: String, locatedInBundle bundle: Bundle?) -> Self {
         // Obtain bundle which is appropriate for usage
         
-        let bundleToUse = bundle == nil ? Bundle.main : bundle!
+        let bundleToUse = bundle ?? Bundle.main
         
         
         // Check whether nib exists in specified bundle
@@ -36,20 +36,12 @@ public extension UIViewController {
         
         // Obtain result view controller
         
-        var resultViewController: UIViewController? = nil
-        
-        if nibExists {
-            resultViewController = self.init(nibName: nibName, bundle: bundleToUse)
-        }
-        
-        if resultViewController == nil {
-            resultViewController = self.init()
-        }
+        let resultViewController = nibExists ? self.init(nibName: nibName, bundle: bundleToUse) : self.init()
         
         
         // Return result
         
-        return resultViewController!
+        return resultViewController
     }
     
     /**
@@ -62,7 +54,7 @@ public extension UIViewController {
      
      - returns: View controller from nib with specified name which is located in bundle with specified identifier.
      */
-    public class func vt_viewController(fromNibWithName nibName: String, locatedInBundleWithIdentifier bundleIdentifier: String?) -> UIViewController {
+    public class func vt_viewController(fromNibWithName nibName: String, locatedInBundleWithIdentifier bundleIdentifier: String?) -> Self {
         // Obtain bundle which is appropriate for usage
         
         let bundleToUse = bundleIdentifier == nil ? Bundle.main : Bundle(identifier: bundleIdentifier!)
@@ -86,7 +78,7 @@ public extension UIViewController {
      
      - returns: View controller from nib with specified name which is located in main bundle.
      */
-    public class func vt_viewController(fromNibLocatedInMainBundleWithNibName nibName: String) -> UIViewController {
+    public class func vt_viewController(fromNibLocatedInMainBundleWithNibName nibName: String) -> Self {
         // Obtain bundle
         
         let bundleToUse = Bundle.main
@@ -110,7 +102,7 @@ public extension UIViewController {
      
      - returns: View controller from nib which name is equal to view's class name and which is located in specified bundle.
      */
-    public class func vt_viewController(fromNibWithClassNameLocatedInBundle bundle: Bundle?) -> UIViewController {
+    public class func vt_viewController(fromNibWithClassNameLocatedInBundle bundle: Bundle?) -> Self {
         // Obtain nib name
         
         let nibName = vt_classNameWithoutNamespace()
@@ -134,7 +126,7 @@ public extension UIViewController {
      
      - returns: View controller from nib which name is equal to view's class name and which is located in bundle with specified identifier.
      */
-    public class func vt_viewController(fromNibWithClassNameLocatedInBundleWithIdentifier bundleIdentifier: String?) -> UIViewController {
+    public class func vt_viewController(fromNibWithClassNameLocatedInBundleWithIdentifier bundleIdentifier: String?) -> Self {
         // Obtain nib name
         
         let nibName = vt_classNameWithoutNamespace()
@@ -160,7 +152,7 @@ public extension UIViewController {
      
      - returns: View controller from nib which name is equal to view's class name and which is located in main bundle.
      */
-    public class func vt_viewControllerFromNibWithClassNameLocatedInMainBundle() -> UIViewController {
+    public class func vt_viewControllerFromNibWithClassNameLocatedInMainBundle() -> Self {
         // Obtain nib name
         
         let nibName = vt_classNameWithoutNamespace()
