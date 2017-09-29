@@ -151,7 +151,6 @@
 		694A60231BB0A056007D2837 /* VisualityDemo */ = {
 			isa = PBXGroup;
 			children = (
-				694DB7D11BB0CAE1002FD338 /* Classes */,
 				694DB7D21BB0CAE1002FD338 /* Extensions */,
 				694A60521BB0A07C007D2837 /* Flows */,
 				69C26EC01D941D15005CE3ED /* Libraries */,
@@ -223,13 +222,6 @@
 				694DB7C01BB0B8D6002FD338 /* CircleView.xib */,
 			);
 			path = CircleView;
-			sourceTree = "<group>";
-		};
-		694DB7D11BB0CAE1002FD338 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		694DB7D21BB0CAE1002FD338 /* Extensions */ = {
@@ -637,7 +629,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.postscriptum.VisualityDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -653,7 +645,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.postscriptum.VisualityDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

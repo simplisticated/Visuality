@@ -46,6 +46,7 @@ class FullScreenView: UIView {
     
     // MARK: Private methods
     
+    @objc
     internal func viewDidTapWithGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer) {
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             var frameForView = UIApplication.shared.keyWindow!.bounds
