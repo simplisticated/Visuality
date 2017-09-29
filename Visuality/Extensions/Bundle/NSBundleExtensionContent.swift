@@ -74,7 +74,7 @@ public extension Bundle {
         
         let filteredTopLevelObjectsFromNib = topLevelObjectsFromNib.filter { (evaluatedObject) -> Bool in
             let requiredClassName = viewType.vt_classNameWithNamespace()
-            let evaluatedObjectClassName = (evaluatedObject as AnyObject).classForCoder.vt_classNameWithNamespace()
+            let evaluatedObjectClassName = ((evaluatedObject as! NSObject).classForCoder as! NSObject.Type).vt_classNameWithNamespace()
             let classNameOfEvaluatedObjectIsEqualToRequiredClassName = evaluatedObjectClassName == requiredClassName
             return classNameOfEvaluatedObjectIsEqualToRequiredClassName
         }
