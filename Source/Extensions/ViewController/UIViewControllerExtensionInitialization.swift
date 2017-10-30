@@ -13,86 +13,95 @@ public extension UIViewController {
     
     // MARK: Public class methods
     
-    public class func from(_ location: Location) -> Self {
+    /**
+     Creates new instance of view controller.
+     
+     - Parameters:
+         - nib: Nib query.
+         - bundle: Bundle query.
+     
+     - returns: View controller from specified location.
+     */
+    public class func from(nib: NibQuery, inBundle bundle: BundleQuery) -> Self {
         let initializer = ViewControllerInitializer(viewControllerClass: self)
-        return initializer.viewController(fromLocation: location)
+        return initializer.viewController(fromNib: nib, locatedInBundle: bundle)
     }
     
     /**
     Loads view controller from nib with specified name which is located in specified bundle.
     
     - Parameters:
-    - nibName: Name of nib file to load view from.
+         - nibName: Name of nib file to load view from.
     
-    - bundle: Bundle which contains specified nib file. If nil, main bundle will be used.
+         - bundle: Bundle which contains specified nib file. If nil, main bundle will be used.
     
     - returns: View controller from nib with specified name which is located in specified bundle.
     */
-    public class func vt_viewController(fromNibWithName nibName: String, locatedInBundle bundle: Bundle?) -> Self {
+    public class func from(nibWithName nibName: String, locatedInBundle bundle: Bundle?) -> Self {
         let initializer = ViewControllerInitializer(viewControllerClass: self)
         return initializer.viewController(fromNibWithName: nibName, locatedInBundle: bundle)
     }
     
     /**
-     Loads view controller from nib with specified name which is located in bundle with specified identifier.
+     Creates new instance of view controller from nib with specified name which is located in bundle with specified identifier.
      
      - Parameters:
-     - nibName: Name of nib file to load view from.
+         - nibName: Name of nib file to load view from.
      
-     - bundleIdentifier: Identifier of bundle which contains specified nib file. If nil, main bundle will be used.
+         - bundleIdentifier: Identifier of bundle which contains specified nib file. If nil, main bundle will be used.
      
      - returns: View controller from nib with specified name which is located in bundle with specified identifier.
      */
-    public class func vt_viewController(fromNibWithName nibName: String, locatedInBundleWithIdentifier bundleIdentifier: String?) -> Self {
+    public class func from(nibWithName nibName: String, locatedInBundleWithIdentifier bundleIdentifier: String?) -> Self {
         let initializer = ViewControllerInitializer(viewControllerClass: self)
         return initializer.viewController(fromNibWithName: nibName, locatedInBundleWithIdentifier: bundleIdentifier)
     }
     
     /**
-     Loads view controller from nib with specified name which is located in main bundle.
+     Creates new instance of view controller from nib with specified name which is located in main bundle.
      
      - Parameters:
-     - nibName: Name of nib file to load view from.
+         - nibName: Name of nib file to load view from.
      
      - returns: View controller from nib with specified name which is located in main bundle.
      */
-    public class func vt_viewController(fromNibLocatedInMainBundleWithNibName nibName: String) -> Self {
+    public class func from(nibLocatedInMainBundleWithNibName nibName: String) -> Self {
         let initializer = ViewControllerInitializer(viewControllerClass: self)
         return initializer.viewController(fromNibLocatedInMainBundleWithNibName: nibName)
     }
     
     /**
-     Loads view controller from nib which name is equal to view's class name and which is located in specified bundle.
+     Creates new instance of view controller from nib which name is equal to view's class name and which is located in specified bundle.
      
      - Parameters:
-     - bundle: Bundle which contains specified nib file. If nil, main bundle will be used.
+         - bundle: Bundle which contains specified nib file. If nil, main bundle will be used.
      
      - returns: View controller from nib which name is equal to view's class name and which is located in specified bundle.
      */
-    public class func vt_viewController(fromNibWithClassNameLocatedInBundle bundle: Bundle?) -> Self {
+    public class func from(nibWithClassNameLocatedInBundle bundle: Bundle?) -> Self {
         let initializer = ViewControllerInitializer(viewControllerClass: self)
         return initializer.viewController(fromNibWithClassNameLocatedInBundle: bundle)
     }
     
     /**
-     Loads view controller from nib which name is equal to view's class name and which is located in bundle with specified identifier.
+     Creates new instance of view controller from nib which name is equal to view's class name and which is located in bundle with specified identifier.
      
      - Parameters:
-     - bundleIdentifier: Identifier of bundle which contains specified nib file. If nil, main bundle will be used.
+         - bundleIdentifier: Identifier of bundle which contains specified nib file. If nil, main bundle will be used.
      
      - returns: View controller from nib which name is equal to view's class name and which is located in bundle with specified identifier.
      */
-    public class func vt_viewController(fromNibWithClassNameLocatedInBundleWithIdentifier bundleIdentifier: String?) -> Self {
+    public class func from(nibWithClassNameLocatedInBundleWithIdentifier bundleIdentifier: String?) -> Self {
         let initializer = ViewControllerInitializer(viewControllerClass: self)
         return initializer.viewController(fromNibWithClassNameLocatedInBundleWithIdentifier: bundleIdentifier)
     }
     
     /**
-     Loads view controller from nib which name is equal to view's class name and which is located in main bundle.
+     Creates new instance of view controller from nib which name is equal to view's class name and which is located in main bundle.
      
      - returns: View controller from nib which name is equal to view's class name and which is located in main bundle.
      */
-    public class func vt_viewControllerFromNibWithClassNameLocatedInMainBundle() -> Self {
+    public class func fromNibWithClassNameLocatedInMainBundle() -> Self {
         let initializer = ViewControllerInitializer(viewControllerClass: self)
         return initializer.viewControllerFromNibWithClassNameLocatedInMainBundle()
     }

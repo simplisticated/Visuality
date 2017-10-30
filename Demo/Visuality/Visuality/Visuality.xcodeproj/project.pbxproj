@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		695B309F1FA70CE000AC0871 /* ViewInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695B309C1FA70CE000AC0871 /* ViewInitializer.swift */; };
 		695B30A01FA70CE000AC0871 /* ViewControllerInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695B309E1FA70CE000AC0871 /* ViewControllerInitializer.swift */; };
-		695B30A31FA70D6400AC0871 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695B30A21FA70D6400AC0871 /* Location.swift */; };
+		695B30AA1FA7219900AC0871 /* NibQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695B30A81FA7219800AC0871 /* NibQuery.swift */; };
+		695B30AB1FA7219900AC0871 /* BundleQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695B30A91FA7219900AC0871 /* BundleQuery.swift */; };
 		69F98B071FA68A2A0028392A /* Visuality.h in Headers */ = {isa = PBXBuildFile; fileRef = 69F98B051FA68A2A0028392A /* Visuality.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69F98B221FA68A6E0028392A /* NSBundleExtensionContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B101FA68A6E0028392A /* NSBundleExtensionContent.swift */; };
 		69F98B231FA68A6E0028392A /* NSObjectExtensionNamespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B121FA68A6E0028392A /* NSObjectExtensionNamespaces.swift */; };
@@ -24,7 +25,8 @@
 /* Begin PBXFileReference section */
 		695B309C1FA70CE000AC0871 /* ViewInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInitializer.swift; sourceTree = "<group>"; };
 		695B309E1FA70CE000AC0871 /* ViewControllerInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerInitializer.swift; sourceTree = "<group>"; };
-		695B30A21FA70D6400AC0871 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		695B30A81FA7219800AC0871 /* NibQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibQuery.swift; sourceTree = "<group>"; };
+		695B30A91FA7219900AC0871 /* BundleQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleQuery.swift; sourceTree = "<group>"; };
 		69F98B021FA68A2A0028392A /* Visuality.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Visuality.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F98B051FA68A2A0028392A /* Visuality.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Visuality.h; sourceTree = "<group>"; };
 		69F98B061FA68A2A0028392A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,7 +79,8 @@
 		695B30A11FA70D0E00AC0871 /* Types */ = {
 			isa = PBXGroup;
 			children = (
-				695B30A21FA70D6400AC0871 /* Location.swift */,
+				695B30A81FA7219800AC0871 /* NibQuery.swift */,
+				695B30A91FA7219900AC0871 /* BundleQuery.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -294,7 +297,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				69F98B261FA68A6E0028392A /* UIViewControllerExtensionInitialization.swift in Sources */,
-				695B30A31FA70D6400AC0871 /* Location.swift in Sources */,
+				695B30AB1FA7219900AC0871 /* BundleQuery.swift in Sources */,
+				695B30AA1FA7219900AC0871 /* NibQuery.swift in Sources */,
 				695B30A01FA70CE000AC0871 /* ViewControllerInitializer.swift in Sources */,
 				69F98B291FA68A6E0028392A /* ScrollableContainerView.swift in Sources */,
 				69F98B2A1FA68A6E0028392A /* ScrollableContainerViewScrollDirection.swift in Sources */,
