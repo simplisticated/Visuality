@@ -31,6 +31,60 @@ internal class ViewInitializer<View: UIView> {
     // MARK: Public object methods
     
     /**
+     Creates new instance of view.
+     
+     - Parameters:
+         - nibQuery: Nib query.
+         - bundleQuery: Bundle query.
+     
+     - returns: View from specified location.
+     */
+    public func view(fromNib nibQuery: NibQuery, locatedInBundle bundleQuery: BundleQuery) -> View {
+        // Obtain bundle
+        
+        var nibBundle: Bundle!
+        
+        switch bundleQuery {
+        case .main:
+            nibBundle = .main
+            break
+        case let .byValue(bundle):
+            nibBundle = bundle
+            break
+        case let .byIdentifier(identifier):
+            nibBundle = Bundle(identifier: identifier)
+            break
+        }
+        
+        let bundleOrMain = nibBundle ?? .main
+        
+        // Obtain nib name
+        
+        var nibName: String
+        
+        switch nibQuery {
+        case let .byNibName(name):
+            nibName = name
+            break
+        case .byClassName:
+            nibName = View.vt_classNameWithoutNamespace()
+            break
+        }
+        
+        // Check whether nib exists in specified bundle
+        
+        let nibExists = bundleOrMain.vt_contains(nibWithName: nibName)
+        
+        // Obtain result view
+        
+        let resultView = nibExists ? bundleOrMain.vt_load(viewOfType: View.self, fromNibWithName: nibName) : View.init()
+        
+        // Return result
+        
+        return resultView!
+    }
+    
+    /**
     Loads view from nib with specified name which is located in specified bundle.
     
     - Parameters:
@@ -43,19 +97,15 @@ internal class ViewInitializer<View: UIView> {
     public func view(fromNibWithName nibName: String, locatedInBundle bundle: Bundle?) -> View {
         // Obtain bundle which is appropriate for usage
         
-        let bundleToUse = bundle ?? Bundle.main
+        let bundleOrMain = bundle ?? Bundle.main
         
         // Check whether nib exists in specified bundle
         
-        let nibExists = bundleToUse.vt_contains(nibWithName: nibName)
+        let nibExists = bundleOrMain.vt_contains(nibWithName: nibName)
         
         // Obtain result view
         
-        var resultView = nibExists ? bundleToUse.vt_load(viewOfType: View.self, fromNibWithName: nibName) : nil
-        
-        if resultView == nil {
-            resultView = View.init()
-        }
+        let resultView = nibExists ? bundleOrMain.vt_load(viewOfType: View.self, fromNibWithName: nibName) : View.init()
         
         // Return result
         
@@ -75,15 +125,20 @@ internal class ViewInitializer<View: UIView> {
     public func view(fromNibWithName nibName: String, locatedInBundleWithIdentifier bundleIdentifier: String?) -> View {
         // Obtain bundle which is appropriate for usage
         
-        let bundleToUse = bundleIdentifier == nil ? Bundle.main : Bundle(identifier: bundleIdentifier!)
+        let bundle = bundleIdentifier == nil ? Bundle.main : Bundle(identifier: bundleIdentifier!)
+            ?? Bundle.main
+        
+        // Check whether nib exists in specified bundle
+        
+        let nibExists = bundle.vt_contains(nibWithName: nibName)
         
         // Obtain result view
         
-        let resultView = self.view(fromNibWithName: nibName, locatedInBundle: bundleToUse)
+        let resultView = nibExists ? bundle.vt_load(viewOfType: View.self, fromNibWithName: nibName) : View.init()
         
         // Return result
         
-        return resultView
+        return resultView!
     }
     
     /**
@@ -97,15 +152,19 @@ internal class ViewInitializer<View: UIView> {
     public func view(fromNibLocatedInMainBundleWithNibName nibName: String) -> View {
         // Obtain bundle
         
-        let bundleToUse = Bundle.main
+        let bundle = Bundle.main
+        
+        // Check whether nib exists in specified bundle
+        
+        let nibExists = bundle.vt_contains(nibWithName: nibName)
         
         // Obtain result view
         
-        let resultView = self.view(fromNibWithName: nibName, locatedInBundle: bundleToUse)
+        let resultView = nibExists ? bundle.vt_load(viewOfType: View.self, fromNibWithName: nibName) : View.init()
         
         // Return result
         
-        return resultView
+        return resultView!
     }
     
     /**
@@ -121,13 +180,21 @@ internal class ViewInitializer<View: UIView> {
         
         let nibName = View.vt_classNameWithoutNamespace()
         
+        // Obtain bundle which is appropriate for usage
+        
+        let bundleOrMain = bundle ?? Bundle.main
+        
+        // Check whether nib exists in specified bundle
+        
+        let nibExists = bundleOrMain.vt_contains(nibWithName: nibName)
+        
         // Obtain result view
         
-        let resultView = self.view(fromNibWithName: nibName, locatedInBundle: bundle)
+        let resultView = nibExists ? bundleOrMain.vt_load(viewOfType: View.self, fromNibWithName: nibName) : View.init()
         
         // Return result
         
-        return resultView
+        return resultView!
     }
     
     /**
@@ -145,15 +212,20 @@ internal class ViewInitializer<View: UIView> {
         
         // Obtain bundle which is appropriate for usage
         
-        let bundleToUse = bundleIdentifier == nil ? Bundle.main : Bundle(identifier: bundleIdentifier!)
+        let bundleOrMain = bundleIdentifier == nil ? Bundle.main : Bundle(identifier: bundleIdentifier!)
+            ?? Bundle.main
+        
+        // Check whether nib exists in specified bundle
+        
+        let nibExists = bundleOrMain.vt_contains(nibWithName: nibName)
         
         // Obtain result view
         
-        let resultView = self.view(fromNibWithName: nibName, locatedInBundle: bundleToUse)
+        let resultView = nibExists ? bundleOrMain.vt_load(viewOfType: View.self, fromNibWithName: nibName) : View.init()
         
         // Return result
         
-        return resultView
+        return resultView!
     }
     
     /**
@@ -168,15 +240,19 @@ internal class ViewInitializer<View: UIView> {
         
         // Obtain bundle
         
-        let bundleToUse = Bundle.main
+        let bundle = Bundle.main
+        
+        // Check whether nib exists in specified bundle
+        
+        let nibExists = bundle.vt_contains(nibWithName: nibName)
         
         // Obtain result view
         
-        let resultView = self.view(fromNibWithName: nibName, locatedInBundle: bundleToUse)
+        let resultView = nibExists ? bundle.vt_load(viewOfType: View.self, fromNibWithName: nibName) : View.init()
         
         // Return result
         
-        return resultView
+        return resultView!
     }
     
     // MARK: Private object methods
