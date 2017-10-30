@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.backgroundColor = .white
             self.window = window
         }.move(toNavigationControllerOfType: UINavigationController.self, inWindow: window!, withConfigurationBlock: { (navigationController) in
-            let mainViewController = MainViewController.from(.nibWithClassNameLocatedInMainBundle)
+            let mainViewController = MainViewController.from(nib: .byClassName, inBundle: .main)
             
             navigationController.viewControllers = [
                 mainViewController
