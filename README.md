@@ -40,64 +40,134 @@ or
 
 ### View Initialization
 
-This library solves a problem of loading views from nib, which usually requires to write a lot of code. With `Visuality` it's possible to initialize view with one line of code.
+Below you can find examples of view initialization by using methods from `UIView` extension.
 
-Examples of view initialization by using methods from `UIView` extension:
+Initialize view by name of NIB file and bundle:
 
 ```swift
-/*
- * Initialize by nib name and bundle.
- */
+let bundle = Bundle(identifier: "com.example.SomeBundleIdentifier")
+let view = SomeView.from(nibWithName: "SomeNibName", locatedInBundle: bundle)
 
-let someBundle1 = Bundle(identifier: "com.example.SomeBundleIdentifier")
+// or
 
-let someView1 = SomeView.vt_view(fromNibWithName: "SomeNibName", locatedInBundle: someBundle1)
+let view = SomeView.from(nib: .byNibName(name: "SomeNibName"), inBundle: .byValue(bundle: bundle))
+```
 
-/*
- * Initialize by nib name and bundle identifier.
- */
+Initialize view by name of NIB file and bundle identifier:
 
-let someView2 = SomeView.vt_view(fromNibWithName: "SomeNibName", locatedInBundleWithIdentifier: "com.example.SomeBundleIdentifier")
+```swift
+let view = SomeView.from(nibWithName: "SomeNibName", locatedInBundleWithIdentifier: "com.example.SomeBundleIdentifier")
 
-/*
- * Initialize by nib name located in main bundle.
- */
+// or
 
-let someView3 = SomeView.vt_view(fromNibLocatedInMainBundleWithNibName: "SomeNibName")
+let view = SomeView.from(nib: .byNibName(name: "SomeNibName"), inBundle: .byIdentifier(identifier: "com.example.SomeBundleIdentifier"))
+```
 
-/*
- * Also, when you send nil as value for bundle,
- * view will be loaded from main bundle too.
- */
+Initialize view by name of NIB file stored in main bundle:
 
-let someView4 = SomeView.vt_view(fromNibWithName: "SomeNibName", locatedInBundle: nil)
+```swift
+let view = SomeView.from(nibLocatedInMainBundleWithNibName: "SomeNibName")
 
-/*
- * Initialize from nib with class name and bundle.
- */
+// or
 
-let someBundle5 = Bundle(identifier: "com.example.SomeBundleIdentifier")
+let view = SomeView.from(nib: .byNibName(name: "SomeNibName"), inBundle: .main)
+```
 
-let someView5 = SomeView.vt_view(fromNibWithClassNameLocatedInBundle: someBundle5)
+Initialize view by name of NIB file identical to name of view class and bundle:
 
-/*
- * Initialize from nib with class name and bundle identifier.
- */
+```swift
+let bundle = Bundle(identifier: "com.example.SomeBundleIdentifier")
+let view = SomeView.from(nibWithClassNameLocatedInBundle: bundle)
 
-let someView6 = SomeView.vt_view(fromNibWithClassNameLocatedInBundleWithIdentifier: "com.example.SomeBundleIdentifier")
+// or
 
-/*
- * Initialize from nib with class name located in main bundle.
- */
+let view = SomeView.from(nib: .byClassName, inBundle: .byValue(bundle: bundle))
+```
 
-let someView7 = SomeView.vt_viewFromNibWithClassNameLocatedInMainBundle()
+Initialize view by name of NIB file identical to name of view class and bundle identifier:
 
-/*
- * You can do the same thing by sending nil as value for bundle identifier.
- * In this case view will be loaded from main bundle too.
- */
+```swift
+let view = SomeView.from(nibWithClassNameLocatedInBundleWithIdentifier: "com.example.SomeBundleIdentifier")
 
-let someView8 = SomeView.vt_view(fromNibWithClassNameLocatedInBundleWithIdentifier: nil)
+// or
+
+let view = SomeView.from(nib: .byClassName, inBundle: .byIdentifier(identifier: "com.example.SomeBundleIdentifier"))
+```
+
+Initialize view by name of NIB file that is identical to name of view class and stored in main bundle:
+
+```swift
+let view = SomeView.fromNibWithClassNameLocatedInMainBundle()
+
+// or
+
+let view = SomeView.from(nib: .byClassName, inBundle: .main)
+```
+
+### View Controller Initialization
+
+Initialization of view controller instances is very similar to view's initialization. Check examples below.
+
+Initialize view controller by name of NIB file and bundle:
+
+```swift
+let bundle = Bundle(identifier: "com.example.SomeBundleIdentifier")
+let viewController = SomeViewController.from(nibWithName: "SomeNibName", locatedInBundle: bundle)
+
+// or
+
+let viewController = SomeViewController.from(nib: .byNibName(name: "SomeNibName"), inBundle: .byValue(bundle: bundle))
+```
+
+Initialize view controller by name of NIB file and bundle identifier:
+
+```swift
+let viewController = SomeViewController.from(nibWithName: "SomeNibName", locatedInBundleWithIdentifier: "com.example.SomeBundleIdentifier")
+
+// or
+
+let viewController = SomeViewController.from(nib: .byNibName(name: "SomeNibName"), inBundle: .byIdentifier(identifier: "com.example.SomeBundleIdentifier"))
+```
+
+Initialize view controller by name of NIB file stored in main bundle:
+
+```swift
+let viewController = SomeViewController.from(nibLocatedInMainBundleWithNibName: "SomeNibName")
+
+// or
+
+let viewController = SomeViewController.from(nib: .byNibName(name: "SomeNibName"), inBundle: .main)
+```
+
+Initialize view controller by name of NIB file identical to name of view controller class and bundle:
+
+```swift
+let bundle = Bundle(identifier: "com.example.SomeBundleIdentifier")
+let viewController = SomeViewController.from(nibWithClassNameLocatedInBundle: bundle)
+
+// or
+
+let viewController = SomeViewController.from(nib: .byClassName, inBundle: .byValue(bundle: bundle))
+```
+
+Initialize view by name of NIB file identical to name of view controller class and bundle identifier:
+
+```swift
+let viewController = SomeViewController.from(nibWithClassNameLocatedInBundleWithIdentifier: "com.example.SomeBundleIdentifier")
+
+// or
+
+let viewController = SomeViewController.from(nib: .byClassName, inBundle: .byIdentifier(identifier: "com.example.SomeBundleIdentifier"))
+```
+
+Initialize view controller by name of NIB file that is identical to name of view controller class and stored in main bundle:
+
+```swift
+let viewController = SomeViewController.fromNibWithClassNameLocatedInMainBundle()
+
+// or
+
+let viewController = SomeViewController.from(nib: .byClassName, inBundle: .main)
 ```
 
 ### Navigation
