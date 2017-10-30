@@ -1,5 +1,5 @@
 <p align="center" >
-  <img src="https://github.com/igormatyushkin014/Visuality/blob/master/Logo/logo-1024-300.png" alt="Visuality" title="Visuality">
+  <img src="https://github.com/igormatyushkin014/Visuality/blob/master/Logo/logo_1024_1024.png" alt="Visuality" title="Visuality" width="300px" height="300px">
 </p>
 
 <p align="center">
