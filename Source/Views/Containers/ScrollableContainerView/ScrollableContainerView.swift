@@ -108,7 +108,7 @@ public class ScrollableContainerView: UIView {
     public func setContentView<ContentViewType: UIView>(ofType contentViewType: ContentViewType.Type, fromNibWithClassNameLocatedInBundle bundle: Bundle?, withScrollDirection scrollDirection: ScrollableContainerViewScrollDirection, andConfigurationBlock configurationBlock: ((_ contentView: ContentViewType) -> Void)?) {
         // Create new content view
         
-        let newContentView = ContentViewType.vt_view(fromNibWithClassNameLocatedInBundle: bundle)
+        let newContentView = ContentViewType.from(nib: .byClassName, inBundle: .byValue(bundle: bundle ?? .main))
         
         // Update scroll direction
         
