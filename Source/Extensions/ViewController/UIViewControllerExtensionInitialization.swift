@@ -13,6 +13,11 @@ public extension UIViewController {
     
     // MARK: Public class methods
     
+    public class func from(_ location: Location) -> Self {
+        let initializer = ViewControllerInitializer(viewControllerClass: self)
+        return initializer.viewController(fromLocation: location)
+    }
+    
     /**
     Loads view controller from nib with specified name which is located in specified bundle.
     
