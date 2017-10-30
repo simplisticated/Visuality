@@ -79,7 +79,7 @@ public class ContainerView: UIView {
     public func setContentView<ContentViewType: UIView>(ofType contentViewType: ContentViewType.Type, fromNibWithClassNameLocatedInBundle bundle: Bundle?, withConfigurationBlock configurationBlock: ((_ contentView: ContentViewType) -> Void)?) {
         // Create new content view
         
-        let newContentView = ContentViewType.vt_view(fromNibWithClassNameLocatedInBundle: bundle)
+        let newContentView = ContentViewType.from(nib: .byClassName, inBundle: .byValue(bundle: bundle ?? .main))
         
         // Update current content view
         
