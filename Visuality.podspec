@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Visuality"
-  s.version      = "4.1"
+  s.version      = "4.2"
   s.summary      = "Library for iOS that simplifies work with views in Swift."
 
   # This description is used to generate tags and improve search results.
@@ -91,7 +91,7 @@ Visuality is a library for iOS which includes set of classes and extensions that
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Visuality", "Visuality/**/*"
+  s.source_files  = "Source", "Source/**/*"
   #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
