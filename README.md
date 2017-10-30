@@ -3,15 +3,24 @@
 </p>
 
 <p align="center">
-<a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-4-orange.svg?style=flat"></a>
+<a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat"></a>
 <a href="https://cocoapods.org"><img src="https://img.shields.io/cocoapods/v/Visuality.svg?maxAge=2592000"></a>
 <a href="https://cocoapods.org"><img src="https://img.shields.io/cocoapods/dt/Visuality.svg?maxAge=2592000"></a>
 <a href="https://tldrlegal.com/license/mit-license"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat"></a>
 </p>
 
-# At a Glance
+# Visuality
 
-`Visuality` is a library for iOS which includes set of classes and extensions that simplify work with native SDK in Swift.
+Very often iOS developers face the problem of initializing view (or view controller) from NIB. Natively, iOS SDK requires developer to write a lot of code in this case:
+
+1. check programmatically existence of bundle where the NIB file is stored ☹️
+2. check existence of the NIB file inside of the bundle 😔
+3. load content from the NIB 😠
+4. find appropriate view from array of different elements 😡😡😡
+
+`Visuality` solves the problem described above. You can initialize view (and of course view controller) from NIB located in any bundle with just a one line of code! Sounds quite simple, isn't it? 😉
+
+Also, `Visuality` provides developer with special tools that simplify creating new window and switching between navigation controllers. Welcome to the world of low complexity! 😀
 
 ## How To Get Started
 
@@ -44,13 +53,11 @@ let someBundle1 = Bundle(identifier: "com.example.SomeBundleIdentifier")
 
 let someView1 = SomeView.vt_view(fromNibWithName: "SomeNibName", locatedInBundle: someBundle1)
 
-
 /*
  * Initialize by nib name and bundle identifier.
  */
 
 let someView2 = SomeView.vt_view(fromNibWithName: "SomeNibName", locatedInBundleWithIdentifier: "com.example.SomeBundleIdentifier")
-
 
 /*
  * Initialize by nib name located in main bundle.
@@ -58,14 +65,12 @@ let someView2 = SomeView.vt_view(fromNibWithName: "SomeNibName", locatedInBundle
 
 let someView3 = SomeView.vt_view(fromNibLocatedInMainBundleWithNibName: "SomeNibName")
 
-
 /*
  * Also, when you send nil as value for bundle,
  * view will be loaded from main bundle too.
  */
 
 let someView4 = SomeView.vt_view(fromNibWithName: "SomeNibName", locatedInBundle: nil)
-
 
 /*
  * Initialize from nib with class name and bundle.
@@ -75,13 +80,11 @@ let someBundle5 = Bundle(identifier: "com.example.SomeBundleIdentifier")
 
 let someView5 = SomeView.vt_view(fromNibWithClassNameLocatedInBundle: someBundle5)
 
-
 /*
  * Initialize from nib with class name and bundle identifier.
  */
 
 let someView6 = SomeView.vt_view(fromNibWithClassNameLocatedInBundleWithIdentifier: "com.example.SomeBundleIdentifier")
-
 
 /*
  * Initialize from nib with class name located in main bundle.
@@ -89,44 +92,12 @@ let someView6 = SomeView.vt_view(fromNibWithClassNameLocatedInBundleWithIdentifi
 
 let someView7 = SomeView.vt_viewFromNibWithClassNameLocatedInMainBundle()
 
-
 /*
  * You can do the same thing by sending nil as value for bundle identifier.
  * In this case view will be loaded from main bundle too.
  */
 
 let someView8 = SomeView.vt_view(fromNibWithClassNameLocatedInBundleWithIdentifier: nil)
-```
-
-### Layout
-
-`Visuality` simplifies common tasks with view's layout.
-
-```swift
-/*
- * Fit view in container.
- */
-
-let someView = SomeView.vt_viewFromNibWithClassNameLocatedInMainBundle()
-someView.vt_fill(view: containerView)
-
-/*
- * Fit view in superview.
- */
-
-someView.vt_fill(view: someView.superview!)
-
-/*
- * Locate view in center of container.
- */
-
-someView.vt_locate(inCenterOfView: containerView)
-
-/*
- * Do the same thing with superview.
- */
-
-someView.vt_locate(inCenterOfView: someView.superview!)
 ```
 
 ### Navigation
@@ -145,7 +116,6 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
     window!.backgroundColor = .whiteColor()
     window!.makeKeyAndVisible()
 
-
     // Display view controller
 
     let someViewController = SomeViewController()
@@ -154,7 +124,6 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
     navigationController.navigationBarHidden = true
 
     window!.rootViewController = navigationController
-
 
     // Return result
 
@@ -176,7 +145,6 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
         navigationController.viewControllers = [someViewController]
         navigationController.navigationBarHidden = true
     }
-
 
     // Return result
 
@@ -229,30 +197,6 @@ If you want to use your custom class for navigation bar or toolbar inside of nav
 
 The first parameter is type of navigation controller. The second parameter is a type of navigation bar. Third parameter is a type of toolbar. And, finally, the last parameter is a configuration block for navigation controller.
 
-Sometimes you might need to display some view on the entire screen above all other views. Usually, this task could be solved by adding view to key `UIWindow` instance. `Visuality` has flexible solution for this case:
-
-```swift
-VTNavigationManager.shared.add(view: fullScreenView, toKeyWindowFromApplication: UIApplication.shared, animated: true, withDuration: 2.0, prepareForAnimation: { (view, window) in
-    view.frame = window.bounds
-    view.alpha = 0.0
-}, animationBlock: { (view, window) in
-    view.alpha = 1.0
-}) { (finished) in
-}
-```
-
-This method allows you to display view on the screen animatedly. First parameter is a view which should be added to `UIWindow` instance as a subview. Second parameter specifies duration of animation for view's appearance. Third parameter is a block which is called before appearance animation for purpose of some initial settings. Fourth parameter is an animation block. And, finally, the last parameter is a completion block.
-
-If you don't need to program animation for view's appearance, you can use another version of this method:
-
-```swift
-VTNavigationManager.shared.add(view: fullScreenView, toKeyWindowFromApplication: UIApplication.shared) { (view, window) in
-    view.backgroundColor = .whiteColor()
-}
-```
-
-This method takes only two parameters: the view itself and configuration block which is called when view is added to the window.
-
 All navigation methods of `VTNavigationManager` returns manager's object, so you can write code with chain:
 
 ```swift
@@ -263,18 +207,9 @@ VTNavigationManager.sharedNavigationManager().create(windowOfType: UIWindow.self
     let someViewController = SomeViewController()
     navigationController.viewControllers = [someViewController]
     navigationController.navigationBarHidden = true
-}.add(view: fullScreenView, toKeyWindowFromApplication: UIApplication.shared, animated: true, withDuration: 2.0, prepareForAnimation: { (view, window) in
-    view.frame = window.bounds
-    view.alpha = 0.0
-}, animationBlock: { (view, window) in
-    view.alpha = 1.0
-}) { (finished) in
-}.add(view: otherFullScreenView, toKeyWindowFromApplication: UIApplication.shared) { (view, window) in
-    view.backgroundColor = .whiteColor()
 }
 ```
 
 ## License
 
 `Visuality` is available under the MIT license. See the `LICENSE` file for more info.
-
