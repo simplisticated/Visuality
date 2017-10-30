@@ -24,8 +24,8 @@ public extension UIView {
     - returns: View from nib with specified name which is located in specified bundle.
     */
     public class func vt_view(fromNibWithName nibName: String, locatedInBundle bundle: Bundle?) -> Self {
-        let viewInitializer = ViewInitializer(viewClass: self)
-        return viewInitializer.view(fromNibWithName: nibName, locatedInBundle: bundle)
+        let initializer = ViewInitializer(viewClass: self)
+        return initializer.view(fromNibWithName: nibName, locatedInBundle: bundle)
     }
     
     /**
@@ -39,8 +39,8 @@ public extension UIView {
     - returns: View from nib with specified name which is located in bundle with specified identifier.
     */
     public class func vt_view(fromNibWithName nibName: String, locatedInBundleWithIdentifier bundleIdentifier: String?) -> Self {
-        let viewInitializer = ViewInitializer(viewClass: self)
-        return viewInitializer.view(fromNibWithName: nibName, locatedInBundleWithIdentifier: bundleIdentifier)
+        let initializer = ViewInitializer(viewClass: self)
+        return initializer.view(fromNibWithName: nibName, locatedInBundleWithIdentifier: bundleIdentifier)
     }
     
     /**
@@ -52,8 +52,8 @@ public extension UIView {
     - returns: View from nib with specified name which is located in main bundle.
     */
     public class func vt_view(fromNibLocatedInMainBundleWithNibName nibName: String) -> Self {
-        let viewInitializer = ViewInitializer(viewClass: self)
-        return viewInitializer.view(fromNibLocatedInMainBundleWithNibName: nibName)
+        let initializer = ViewInitializer(viewClass: self)
+        return initializer.view(fromNibLocatedInMainBundleWithNibName: nibName)
     }
     
     /**
@@ -65,8 +65,8 @@ public extension UIView {
     - returns: View from nib which name is equal to view's class name and which is located in specified bundle.
     */
     public class func vt_view(fromNibWithClassNameLocatedInBundle bundle: Bundle?) -> Self {
-        let viewInitializer = ViewInitializer(viewClass: self)
-        return viewInitializer.view(fromNibWithClassNameLocatedInBundle: bundle)
+        let initializer = ViewInitializer(viewClass: self)
+        return initializer.view(fromNibWithClassNameLocatedInBundle: bundle)
     }
     
     /**
@@ -78,8 +78,8 @@ public extension UIView {
     - returns: View from nib which name is equal to view's class name and which is located in bundle with specified identifier.
     */
     public class func vt_view(fromNibWithClassNameLocatedInBundleWithIdentifier bundleIdentifier: String?) -> Self {
-        let viewInitializer = ViewInitializer(viewClass: self)
-        return viewInitializer.view(fromNibWithClassNameLocatedInBundleWithIdentifier: bundleIdentifier)
+        let initializer = ViewInitializer(viewClass: self)
+        return initializer.view(fromNibWithClassNameLocatedInBundleWithIdentifier: bundleIdentifier)
     }
     
     /**
@@ -88,8 +88,8 @@ public extension UIView {
     - returns: View from nib which name is equal to view's class name and which is located in main bundle.
     */
     public class func vt_viewFromNibWithClassNameLocatedInMainBundle() -> Self {
-        let viewInitializer = ViewInitializer(viewClass: self)
-        return viewInitializer.viewFromNibWithClassNameLocatedInMainBundle()
+        let initializer = ViewInitializer(viewClass: self)
+        return initializer.viewFromNibWithClassNameLocatedInMainBundle()
     }
     
     // MARK: Private class methods
