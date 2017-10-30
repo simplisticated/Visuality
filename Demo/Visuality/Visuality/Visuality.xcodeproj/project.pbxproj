@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		69C560421FA6A0FE003E699E /* ViewControllerInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C560411FA6A0FE003E699E /* ViewControllerInitializer.swift */; };
+		695B309F1FA70CE000AC0871 /* ViewInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695B309C1FA70CE000AC0871 /* ViewInitializer.swift */; };
+		695B30A01FA70CE000AC0871 /* ViewControllerInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695B309E1FA70CE000AC0871 /* ViewControllerInitializer.swift */; };
+		695B30A31FA70D6400AC0871 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695B30A21FA70D6400AC0871 /* Location.swift */; };
 		69F98B071FA68A2A0028392A /* Visuality.h in Headers */ = {isa = PBXBuildFile; fileRef = 69F98B051FA68A2A0028392A /* Visuality.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69F98B221FA68A6E0028392A /* NSBundleExtensionContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B101FA68A6E0028392A /* NSBundleExtensionContent.swift */; };
 		69F98B231FA68A6E0028392A /* NSObjectExtensionNamespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B121FA68A6E0028392A /* NSObjectExtensionNamespaces.swift */; };
@@ -17,11 +19,12 @@
 		69F98B281FA68A6E0028392A /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B1E1FA68A6E0028392A /* ContainerView.swift */; };
 		69F98B291FA68A6E0028392A /* ScrollableContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B201FA68A6E0028392A /* ScrollableContainerView.swift */; };
 		69F98B2A1FA68A6E0028392A /* ScrollableContainerViewScrollDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B211FA68A6E0028392A /* ScrollableContainerViewScrollDirection.swift */; };
-		69F98B381FA68F280028392A /* ViewInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B371FA68F280028392A /* ViewInitializer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		69C560411FA6A0FE003E699E /* ViewControllerInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerInitializer.swift; sourceTree = "<group>"; };
+		695B309C1FA70CE000AC0871 /* ViewInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInitializer.swift; sourceTree = "<group>"; };
+		695B309E1FA70CE000AC0871 /* ViewControllerInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerInitializer.swift; sourceTree = "<group>"; };
+		695B30A21FA70D6400AC0871 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		69F98B021FA68A2A0028392A /* Visuality.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Visuality.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F98B051FA68A2A0028392A /* Visuality.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Visuality.h; sourceTree = "<group>"; };
 		69F98B061FA68A2A0028392A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,7 +36,6 @@
 		69F98B1E1FA68A6E0028392A /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		69F98B201FA68A6E0028392A /* ScrollableContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableContainerView.swift; sourceTree = "<group>"; };
 		69F98B211FA68A6E0028392A /* ScrollableContainerViewScrollDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableContainerViewScrollDirection.swift; sourceTree = "<group>"; };
-		69F98B371FA68F280028392A /* ViewInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInitializer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		695B309A1FA70CE000AC0871 /* Initializers */ = {
+			isa = PBXGroup;
+			children = (
+				695B309B1FA70CE000AC0871 /* View */,
+				695B309D1FA70CE000AC0871 /* ViewController */,
+			);
+			path = Initializers;
+			sourceTree = "<group>";
+		};
+		695B309B1FA70CE000AC0871 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				695B309C1FA70CE000AC0871 /* ViewInitializer.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		695B309D1FA70CE000AC0871 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				695B309E1FA70CE000AC0871 /* ViewControllerInitializer.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		695B30A11FA70D0E00AC0871 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				695B30A21FA70D6400AC0871 /* Location.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
 		69F98AF81FA68A2A0028392A = {
 			isa = PBXGroup;
 			children = (
@@ -76,9 +111,10 @@
 		69F98B0D1FA68A6E0028392A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				69F98B331FA68F150028392A /* Classes */,
-				69F98B0E1FA68A6E0028392A /* Extensions */,
+				695B30A11FA70D0E00AC0871 /* Types */,
+				695B309A1FA70CE000AC0871 /* Initializers */,
 				69F98B181FA68A6E0028392A /* Navigation */,
+				69F98B0E1FA68A6E0028392A /* Extensions */,
 				69F98B1B1FA68A6E0028392A /* Views */,
 			);
 			name = Source;
@@ -178,39 +214,6 @@
 			path = ScrollableContainerView;
 			sourceTree = "<group>";
 		};
-		69F98B331FA68F150028392A /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				69F98B341FA68F150028392A /* Initializers */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		69F98B341FA68F150028392A /* Initializers */ = {
-			isa = PBXGroup;
-			children = (
-				69F98B351FA68F150028392A /* View */,
-				69F98B361FA68F150028392A /* ViewController */,
-			);
-			path = Initializers;
-			sourceTree = "<group>";
-		};
-		69F98B351FA68F150028392A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				69F98B371FA68F280028392A /* ViewInitializer.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		69F98B361FA68F150028392A /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				69C560411FA6A0FE003E699E /* ViewControllerInitializer.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -291,11 +294,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				69F98B261FA68A6E0028392A /* UIViewControllerExtensionInitialization.swift in Sources */,
-				69C560421FA6A0FE003E699E /* ViewControllerInitializer.swift in Sources */,
+				695B30A31FA70D6400AC0871 /* Location.swift in Sources */,
+				695B30A01FA70CE000AC0871 /* ViewControllerInitializer.swift in Sources */,
 				69F98B291FA68A6E0028392A /* ScrollableContainerView.swift in Sources */,
 				69F98B2A1FA68A6E0028392A /* ScrollableContainerViewScrollDirection.swift in Sources */,
 				69F98B241FA68A6E0028392A /* UIViewExtensionInitialization.swift in Sources */,
-				69F98B381FA68F280028392A /* ViewInitializer.swift in Sources */,
+				695B309F1FA70CE000AC0871 /* ViewInitializer.swift in Sources */,
 				69F98B221FA68A6E0028392A /* NSBundleExtensionContent.swift in Sources */,
 				69F98B271FA68A6E0028392A /* VTNavigationManager.swift in Sources */,
 				69F98B281FA68A6E0028392A /* ContainerView.swift in Sources */,
