@@ -30,136 +30,67 @@ internal class ViewControllerInitializer<ViewController: UIViewController> {
     
     // MARK: Public object methods
     
-    public func viewController(fromLocation location: Location?) -> ViewController {
-        // Check whether location is not nil
+    /**
+     Creates new instance of view controller.
+     
+     - Parameters:
+         - nibQuery: Nib query.
+         - bundleQuery: Bundle query.
+     
+     - returns: View controller from specified location.
+     */
+    public func viewController(fromNib nibQuery: NibQuery, locatedInBundle bundleQuery: BundleQuery) -> ViewController {
+        // Obtain bundle
         
-        guard let location = location else {
-            return ViewController.init()
+        var nibBundle: Bundle!
+        
+        switch bundleQuery {
+        case .main:
+            nibBundle = .main
+            break
+        case let .byValue(bundle):
+            nibBundle = bundle
+            break
+        case let .byIdentifier(identifier):
+            nibBundle = Bundle(identifier: identifier)
+            break
         }
         
-        // Handle location
+        let bundleOrMain = nibBundle ?? .main
         
-        switch location {
-        case let .nibByNameLocatedInBundle(nibName, bundle):
-            // Obtain bundle which is appropriate for usage
-            
-            let bundleOrMain = bundle ?? Bundle.main
-            
-            // Check whether nib exists in specified bundle
-            
-            let nibExists = bundleOrMain.vt_contains(nibWithName: nibName)
-            
-            // Obtain result view controller
-            
-            let resultViewController = nibExists ? ViewController.init(nibName: nibName, bundle: bundleOrMain) : ViewController.init()
-            
-            // Return result
-            
-            return resultViewController
-        case let .nibByNameLocatedInBundleByIdentifier(nibName, bundleIdentifier):
-            // Obtain bundle which is appropriate for usage
-            
-            let bundle = bundleIdentifier == nil ? Bundle.main : Bundle(identifier: bundleIdentifier!)
-                ?? Bundle.main
-            
-            // Check whether nib exists in specified bundle
-            
-            let nibExists = bundle.vt_contains(nibWithName: nibName)
-            
-            // Obtain result view controller
-            
-            let resultViewController = nibExists ? ViewController.init(nibName: nibName, bundle: bundle) : ViewController.init()
-            
-            // Return result
-            
-            return resultViewController
-        case let .nibByNameLocatedInMainBundle(nibName):
-            // Obtain bundle
-            
-            let bundle = Bundle.main
-            
-            // Check whether nib exists in specified bundle
-            
-            let nibExists = bundle.vt_contains(nibWithName: nibName)
-            
-            // Obtain result view controller
-            
-            let resultViewController = nibExists ? ViewController.init(nibName: nibName, bundle: bundle) : ViewController.init()
-            
-            // Return result
-            
-            return resultViewController
-        case let .nibWithClassNameLocatedInBundle(bundle):
-            // Obtain nib name
-            
-            let nibName = ViewController.vt_classNameWithoutNamespace()
-            
-            // Obtain bundle which is appropriate for usage
-            
-            let bundleOrMain = bundle ?? Bundle.main
-            
-            // Check whether nib exists in specified bundle
-            
-            let nibExists = bundleOrMain.vt_contains(nibWithName: nibName)
-            
-            // Obtain result view controller
-            
-            let resultViewController = nibExists ? ViewController.init(nibName: nibName, bundle: bundleOrMain) : ViewController.init()
-            
-            // Return result
-            
-            return resultViewController
-        case let .nibWithClassNameLocatedInBundleByIdentifier(bundleIdentifier):
-            // Obtain nib name
-            
-            let nibName = ViewController.vt_classNameWithoutNamespace()
-            
-            // Obtain bundle which is appropriate for usage
-            
-            let bundle = bundleIdentifier == nil ? Bundle.main : Bundle(identifier: bundleIdentifier!)
-                ?? Bundle.main
-            
-            // Check whether nib exists in specified bundle
-            
-            let nibExists = bundle.vt_contains(nibWithName: nibName)
-            
-            // Obtain result view controller
-            
-            let resultViewController = nibExists ? ViewController.init(nibName: nibName, bundle: bundle) : ViewController.init()
-            
-            // Return result
-            
-            return resultViewController
-        case .nibWithClassNameLocatedInMainBundle:
-            // Obtain nib name
-            
-            let nibName = ViewController.vt_classNameWithoutNamespace()
-            
-            // Obtain bundle
-            
-            let bundle = Bundle.main
-            
-            // Check whether nib exists in specified bundle
-            
-            let nibExists = bundle.vt_contains(nibWithName: nibName)
-            
-            // Obtain result view controller
-            
-            let resultViewController = nibExists ? ViewController.init(nibName: nibName, bundle: bundle) : ViewController.init()
-            
-            // Return result
-            
-            return resultViewController
+        // Obtain nib name
+        
+        var nibName: String
+        
+        switch nibQuery {
+        case let .byNibName(name):
+            nibName = name
+            break
+        case .byClassName:
+            nibName = ViewController.vt_classNameWithoutNamespace()
+            break
         }
+        
+        // Check whether nib exists in specified bundle
+        
+        let nibExists = bundleOrMain.vt_contains(nibWithName: nibName)
+        
+        // Obtain result view controller
+        
+        let resultViewController = nibExists ? ViewController.init(nibName: nibName, bundle: bundleOrMain) : ViewController.init()
+        
+        // Return result
+        
+        return resultViewController
     }
-
+    
     /**
     Loads view controller from nib with specified name which is located in specified bundle.
     
     - Parameters:
-    - nibName: Name of nib file to load view from.
-    
-    - bundle: Bundle which contains specified nib file. If nil, main bundle will be used.
+        - nibName: Name of nib file to load view from.
+     
+        - bundle: Bundle which contains specified nib file. If nil, main bundle will be used.
     
     - returns: View controller from nib with specified name which is located in specified bundle.
     */
