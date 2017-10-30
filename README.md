@@ -110,10 +110,10 @@ Usually, when you want to display view controller on launch of the app, you need
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Create window
 
-    let frameForWindow = UIScreen.mainScreen().bounds
+    let frameForWindow = UIScreen.main.bounds
 
     self.window = UIWindow(frame: frameForWindow)
-    window!.backgroundColor = .whiteColor()
+    window!.backgroundColor = .white
     window!.makeKeyAndVisible()
 
     // Display view controller
