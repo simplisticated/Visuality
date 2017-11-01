@@ -104,6 +104,12 @@ let view = SomeView.fromNibWithClassNameLocatedInMainBundle()
 let view = SomeView.from(nib: .byClassName, inBundle: .main)
 ```
 
+Also, you can initialize view without NIB by using `.none` value from `NibQuery`. Example:
+
+```swift
+let view = SomeView.from(nib: .none, inBundle: .main)
+```
+
 ### View Controller Initialization
 
 Initialization of view controller instances is very similar to view's initialization. Check examples below.
@@ -168,6 +174,12 @@ let viewController = SomeViewController.fromNibWithClassNameLocatedInMainBundle(
 // or
 
 let viewController = SomeViewController.from(nib: .byClassName, inBundle: .main)
+```
+
+Similar to `UIView` initialization, it's possible to initialize view controller without NIB:
+
+```swift
+let viewController = SomeViewController.from(nib: .none, inBundle: .main)
 ```
 
 ### Navigation
