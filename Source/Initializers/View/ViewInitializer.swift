@@ -92,7 +92,6 @@ internal class ViewInitializer<View: UIView> {
     
     - Parameters:
         - nibName: Name of nib file to load view from.
-    
         - bundle: Bundle which contains specified nib file. If nil, main bundle will be used.
     
     - returns: View from nib with specified name which is located in specified bundle.
@@ -120,7 +119,6 @@ internal class ViewInitializer<View: UIView> {
     
     - Parameters:
         - nibName: Name of nib file to load view from.
-        
         - bundleIdentifier: Identifier of bundle which contains specified nib file. If nil, main bundle will be used.
     
     - returns: View from nib with specified name which is located in bundle with specified identifier.
@@ -149,7 +147,7 @@ internal class ViewInitializer<View: UIView> {
     
     - Parameters:
         - nibName: Name of nib file to load view from.
-    
+     
     - returns: View from nib with specified name which is located in main bundle.
     */
     public func view(fromNibLocatedInMainBundleWithNibName nibName: String) -> View {
