@@ -60,7 +60,7 @@ internal class ViewControllerInitializer<ViewController: UIViewController> {
         
         // Obtain nib name
         
-        var nibName: String
+        var nibName: String?
         
         switch nibQuery {
         case let .byNibName(name):
@@ -69,15 +69,18 @@ internal class ViewControllerInitializer<ViewController: UIViewController> {
         case .byClassName:
             nibName = ViewController.vt_classNameWithoutNamespace()
             break
+        case .none:
+            // Do nothing
+            break
         }
         
         // Check whether nib exists in specified bundle
         
-        let nibExists = bundleOrMain.vt_contains(nibWithName: nibName)
+        let nibExists = nibName == nil ? false : bundleOrMain.vt_contains(nibWithName: nibName!)
         
         // Obtain result view controller
         
-        let resultViewController = nibExists ? ViewController.init(nibName: nibName, bundle: bundleOrMain) : ViewController.init()
+        let resultViewController = nibExists ? ViewController.init(nibName: nibName!, bundle: bundleOrMain) : ViewController.init()
         
         // Return result
         
