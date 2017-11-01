@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Visuality"
-  s.version      = "5.0"
+  s.version      = "5.1"
   s.summary      = "Library for iOS that simplifies work with views in Swift."
 
   # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ Visuality is a library for iOS which includes set of classes and extensions that
                    DESC
 
   s.homepage     = "https://github.com/igormatyushkin014/Visuality"
-  s.screenshots  = "https://github.com/igormatyushkin014/Visuality/raw/master/Logo/logo-1024-300.png"
+  s.screenshots  = "https://github.com/igormatyushkin014/Visuality/raw/master/Logo/logo_1024_1024.png"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
