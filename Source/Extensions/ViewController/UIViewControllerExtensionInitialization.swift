@@ -32,11 +32,11 @@ public extension UIViewController {
     
     - Parameters:
          - nibName: Name of nib file to load view from.
-    
          - bundle: Bundle which contains specified nib file. If nil, main bundle will be used.
     
     - returns: View controller from nib with specified name which is located in specified bundle.
     */
+    @available(iOS, deprecated, message: "This method is obsolete and will be removed in upcoming update. Use `from(nib: _, inBundle: _)` instead.")
     public class func from(nibWithName nibName: String, locatedInBundle bundle: Bundle?) -> Self {
         let initializer = ViewControllerInitializer(viewControllerClass: self)
         return initializer.viewController(fromNibWithName: nibName, locatedInBundle: bundle)
@@ -47,11 +47,11 @@ public extension UIViewController {
      
      - Parameters:
          - nibName: Name of nib file to load view from.
-     
          - bundleIdentifier: Identifier of bundle which contains specified nib file. If nil, main bundle will be used.
      
      - returns: View controller from nib with specified name which is located in bundle with specified identifier.
      */
+    @available(iOS, deprecated, message: "This method is obsolete and will be removed in upcoming update. Use `from(nib: _, inBundle: _)` instead.")
     public class func from(nibWithName nibName: String, locatedInBundleWithIdentifier bundleIdentifier: String?) -> Self {
         let initializer = ViewControllerInitializer(viewControllerClass: self)
         return initializer.viewController(fromNibWithName: nibName, locatedInBundleWithIdentifier: bundleIdentifier)
@@ -65,6 +65,7 @@ public extension UIViewController {
      
      - returns: View controller from nib with specified name which is located in main bundle.
      */
+    @available(iOS, deprecated, message: "This method is obsolete and will be removed in upcoming update. Use `from(nib: _, inBundle: _)` instead.")
     public class func from(nibLocatedInMainBundleWithNibName nibName: String) -> Self {
         let initializer = ViewControllerInitializer(viewControllerClass: self)
         return initializer.viewController(fromNibLocatedInMainBundleWithNibName: nibName)
@@ -78,6 +79,7 @@ public extension UIViewController {
      
      - returns: View controller from nib which name is equal to view's class name and which is located in specified bundle.
      */
+    @available(iOS, deprecated, message: "This method is obsolete and will be removed in upcoming update. Use `from(nib: _, inBundle: _)` instead.")
     public class func from(nibWithClassNameLocatedInBundle bundle: Bundle?) -> Self {
         let initializer = ViewControllerInitializer(viewControllerClass: self)
         return initializer.viewController(fromNibWithClassNameLocatedInBundle: bundle)
@@ -91,6 +93,7 @@ public extension UIViewController {
      
      - returns: View controller from nib which name is equal to view's class name and which is located in bundle with specified identifier.
      */
+    @available(iOS, deprecated, message: "This method is obsolete and will be removed in upcoming update. Use `from(nib: _, inBundle: _)` instead.")
     public class func from(nibWithClassNameLocatedInBundleWithIdentifier bundleIdentifier: String?) -> Self {
         let initializer = ViewControllerInitializer(viewControllerClass: self)
         return initializer.viewController(fromNibWithClassNameLocatedInBundleWithIdentifier: bundleIdentifier)
@@ -101,6 +104,7 @@ public extension UIViewController {
      
      - returns: View controller from nib which name is equal to view's class name and which is located in main bundle.
      */
+    @available(iOS, deprecated, message: "This method is obsolete and will be removed in upcoming update. Use `from(nib: _, inBundle: _)` instead.")
     public class func fromNibWithClassNameLocatedInMainBundle() -> Self {
         let initializer = ViewControllerInitializer(viewControllerClass: self)
         return initializer.viewControllerFromNibWithClassNameLocatedInMainBundle()
