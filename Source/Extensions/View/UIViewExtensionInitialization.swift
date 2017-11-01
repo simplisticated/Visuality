@@ -37,6 +37,7 @@ public extension UIView {
     
     - returns: View from nib with specified name which is located in specified bundle.
     */
+    @available(iOS, deprecated, message: "This method is obsolete and will be removed in upcoming update. Use `from(nib: _, inBundle: _)` instead.")
     public class func from(nibWithName nibName: String, locatedInBundle bundle: Bundle?) -> Self {
         let initializer = ViewInitializer(viewClass: self)
         return initializer.view(fromNibWithName: nibName, locatedInBundle: bundle)
@@ -52,6 +53,7 @@ public extension UIView {
     
     - returns: View from nib with specified name which is located in bundle with specified identifier.
     */
+    @available(iOS, deprecated, message: "This method is obsolete and will be removed in upcoming update. Use `from(nib: _, inBundle: _)` instead.")
     public class func from(nibWithName nibName: String, locatedInBundleWithIdentifier bundleIdentifier: String?) -> Self {
         let initializer = ViewInitializer(viewClass: self)
         return initializer.view(fromNibWithName: nibName, locatedInBundleWithIdentifier: bundleIdentifier)
@@ -65,6 +67,7 @@ public extension UIView {
     
     - returns: View from nib with specified name which is located in main bundle.
     */
+    @available(iOS, deprecated, message: "This method is obsolete and will be removed in upcoming update. Use `from(nib: _, inBundle: _)` instead.")
     public class func from(nibLocatedInMainBundleWithNibName nibName: String) -> Self {
         let initializer = ViewInitializer(viewClass: self)
         return initializer.view(fromNibLocatedInMainBundleWithNibName: nibName)
@@ -78,6 +81,7 @@ public extension UIView {
     
     - returns: View from nib which name is equal to view's class name and which is located in specified bundle.
     */
+    @available(iOS, deprecated, message: "This method is obsolete and will be removed in upcoming update. Use `from(nib: _, inBundle: _)` instead.")
     public class func from(nibWithClassNameLocatedInBundle bundle: Bundle?) -> Self {
         let initializer = ViewInitializer(viewClass: self)
         return initializer.view(fromNibWithClassNameLocatedInBundle: bundle)
@@ -91,6 +95,7 @@ public extension UIView {
     
     - returns: View from nib which name is equal to view's class name and which is located in bundle with specified identifier.
     */
+    @available(iOS, deprecated, message: "This method is obsolete and will be removed in upcoming update. Use `from(nib: _, inBundle: _)` instead.")
     public class func from(nibWithClassNameLocatedInBundleWithIdentifier bundleIdentifier: String?) -> Self {
         let initializer = ViewInitializer(viewClass: self)
         return initializer.view(fromNibWithClassNameLocatedInBundleWithIdentifier: bundleIdentifier)
@@ -101,6 +106,7 @@ public extension UIView {
     
     - returns: View from nib which name is equal to view's class name and which is located in main bundle.
     */
+    @available(iOS, deprecated, message: "This method is obsolete and will be removed in upcoming update. Use `from(nib: _, inBundle: _)` instead.")
     public class func fromNibWithClassNameLocatedInMainBundle() -> Self {
         let initializer = ViewInitializer(viewClass: self)
         return initializer.viewFromNibWithClassNameLocatedInMainBundle()
