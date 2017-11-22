@@ -36,10 +36,11 @@ internal class ViewControllerInitializer<ViewController: UIViewController> {
      - Parameters:
          - nibQuery: Nib query.
          - bundleQuery: Bundle query.
+         - loadView: Defines whether view controller's view should be loaded immediately.
      
      - returns: View controller from specified location.
      */
-    public func viewController(fromNib nibQuery: NibQuery, locatedInBundle bundleQuery: BundleQuery) -> ViewController {
+    public func viewController(fromNib nibQuery: NibQuery, locatedInBundle bundleQuery: BundleQuery, loadView: Bool) -> ViewController {
         // Obtain bundle
         
         var nibBundle: Bundle!
@@ -81,6 +82,12 @@ internal class ViewControllerInitializer<ViewController: UIViewController> {
         // Obtain result view controller
         
         let resultViewController = nibExists ? ViewController.init(nibName: nibName!, bundle: bundleOrMain) : ViewController.init()
+        
+        // Load view if needed
+        
+        if loadView {
+            let _ = resultViewController.view
+        }
         
         // Return result
         
