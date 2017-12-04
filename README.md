@@ -38,7 +38,7 @@ or
 
 ## Usage
 
-### View Initialization
+### Views
 
 Below you can find examples of view initialization by using methods from `UIView` extension.
 
@@ -46,30 +46,18 @@ Initialize view by name of NIB file and bundle:
 
 ```swift
 let bundle = Bundle(identifier: "com.example.SomeBundleIdentifier")
-let view = SomeView.from(nibWithName: "SomeNibName", locatedInBundle: bundle)
-
-// or
-
 let view = SomeView.from(nib: .byNibName(name: "SomeNibName"), inBundle: .byValue(bundle: bundle))
 ```
 
 Initialize view by name of NIB file and bundle identifier:
 
 ```swift
-let view = SomeView.from(nibWithName: "SomeNibName", locatedInBundleWithIdentifier: "com.example.SomeBundleIdentifier")
-
-// or
-
 let view = SomeView.from(nib: .byNibName(name: "SomeNibName"), inBundle: .byIdentifier(identifier: "com.example.SomeBundleIdentifier"))
 ```
 
 Initialize view by name of NIB file stored in main bundle:
 
 ```swift
-let view = SomeView.from(nibLocatedInMainBundleWithNibName: "SomeNibName")
-
-// or
-
 let view = SomeView.from(nib: .byNibName(name: "SomeNibName"), inBundle: .main)
 ```
 
@@ -77,30 +65,18 @@ Initialize view by name of NIB file identical to name of view class and bundle:
 
 ```swift
 let bundle = Bundle(identifier: "com.example.SomeBundleIdentifier")
-let view = SomeView.from(nibWithClassNameLocatedInBundle: bundle)
-
-// or
-
 let view = SomeView.from(nib: .byClassName, inBundle: .byValue(bundle: bundle))
 ```
 
 Initialize view by name of NIB file identical to name of view class and bundle identifier:
 
 ```swift
-let view = SomeView.from(nibWithClassNameLocatedInBundleWithIdentifier: "com.example.SomeBundleIdentifier")
-
-// or
-
 let view = SomeView.from(nib: .byClassName, inBundle: .byIdentifier(identifier: "com.example.SomeBundleIdentifier"))
 ```
 
 Initialize view by name of NIB file that is identical to name of view class and stored in main bundle:
 
 ```swift
-let view = SomeView.fromNibWithClassNameLocatedInMainBundle()
-
-// or
-
 let view = SomeView.from(nib: .byClassName, inBundle: .main)
 ```
 
@@ -110,7 +86,7 @@ Also, you can initialize view without NIB by using `.none` value from `NibQuery`
 let view = SomeView.from(nib: .none, inBundle: .main)
 ```
 
-### View Controller Initialization
+### View Controllers
 
 Initialization of view controller instances is very similar to view's initialization. Check examples below.
 
@@ -118,30 +94,18 @@ Initialize view controller by name of NIB file and bundle:
 
 ```swift
 let bundle = Bundle(identifier: "com.example.SomeBundleIdentifier")
-let viewController = SomeViewController.from(nibWithName: "SomeNibName", locatedInBundle: bundle)
-
-// or
-
 let viewController = SomeViewController.from(nib: .byNibName(name: "SomeNibName"), inBundle: .byValue(bundle: bundle))
 ```
 
 Initialize view controller by name of NIB file and bundle identifier:
 
 ```swift
-let viewController = SomeViewController.from(nibWithName: "SomeNibName", locatedInBundleWithIdentifier: "com.example.SomeBundleIdentifier")
-
-// or
-
 let viewController = SomeViewController.from(nib: .byNibName(name: "SomeNibName"), inBundle: .byIdentifier(identifier: "com.example.SomeBundleIdentifier"))
 ```
 
 Initialize view controller by name of NIB file stored in main bundle:
 
 ```swift
-let viewController = SomeViewController.from(nibLocatedInMainBundleWithNibName: "SomeNibName")
-
-// or
-
 let viewController = SomeViewController.from(nib: .byNibName(name: "SomeNibName"), inBundle: .main)
 ```
 
@@ -149,30 +113,18 @@ Initialize view controller by name of NIB file identical to name of view control
 
 ```swift
 let bundle = Bundle(identifier: "com.example.SomeBundleIdentifier")
-let viewController = SomeViewController.from(nibWithClassNameLocatedInBundle: bundle)
-
-// or
-
 let viewController = SomeViewController.from(nib: .byClassName, inBundle: .byValue(bundle: bundle))
 ```
 
 Initialize view by name of NIB file identical to name of view controller class and bundle identifier:
 
 ```swift
-let viewController = SomeViewController.from(nibWithClassNameLocatedInBundleWithIdentifier: "com.example.SomeBundleIdentifier")
-
-// or
-
 let viewController = SomeViewController.from(nib: .byClassName, inBundle: .byIdentifier(identifier: "com.example.SomeBundleIdentifier"))
 ```
 
 Initialize view controller by name of NIB file that is identical to name of view controller class and stored in main bundle:
 
 ```swift
-let viewController = SomeViewController.fromNibWithClassNameLocatedInMainBundle()
-
-// or
-
 let viewController = SomeViewController.from(nib: .byClassName, inBundle: .main)
 ```
 
@@ -180,116 +132,6 @@ Similar to `UIView` initialization, it's possible to initialize view controller 
 
 ```swift
 let viewController = SomeViewController.from(nib: .none, inBundle: .main)
-```
-
-### Navigation
-
-`Visuality` provides special class for simplified navigation between screens and flows in the app: `VTNavigationManager`. This class is very easy-to-use though it has set of methods which might seem to be complicated at the first look. Let's dive deeper into this.
-
-Usually, when you want to display view controller on launch of the app, you need to write this code in `AppDelegate` class:
-
-```swift
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    // Create window
-
-    let frameForWindow = UIScreen.main.bounds
-
-    self.window = UIWindow(frame: frameForWindow)
-    window!.backgroundColor = .white
-    window!.makeKeyAndVisible()
-
-    // Display view controller
-
-    let someViewController = SomeViewController()
-
-    let navigationController = UINavigationController(rootViewController: someViewController)
-    navigationController.navigationBarHidden = true
-
-    window!.rootViewController = navigationController
-
-    // Return result
-
-    return true
-}
-```
-
-And this is how you can handle the same task with `VTNavigationManager`:
-
-```swift
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    // Create window and display view controller
-
-    VTNavigationManager.shared.create(windowOfType: UIWindow.self, andMakeItKeyAndVisible: true) { (window) -> Void in
-        window.backgroundColor = .whiteColor()
-        self.window = window
-    }.move(toNavigationControllerOfType: UINavigationController.self) { (navigationController) -> Void in
-        let someViewController = SomeViewController()
-        navigationController.viewControllers = [someViewController]
-        navigationController.navigationBarHidden = true
-    }
-
-    // Return result
-
-    return true
-}
-```
-
-What's the difference? First of all, `VTNavigationManager` adds more flexibility to your code. In example above, there are two methods which were called on `VTNavigationManager`'s shared instance. The first method creates new window:
-
-```swift
-VTNavigationManager.shared.create(windowOfType: UIWindow.self, andMakeItKeyAndVisible: true) { (window) -> Void in
-    window.backgroundColor = .whiteColor()
-    self.window = window
-}
-```
-
-The first parameter is a type of window. Usually it should be `UIWindow.self`, but you might want to create custom `UIWindow` subclass. In this case, you can simply switch to new `UIWindow` subclass by replacing first parameter with appropriate type.
-
-The second parameter shows whether window should be made key and visible automatically.
-
-The last parameter is a configuration block which allows you to prepare window before displaying it on the screen. You can set background color, make window key and visible, etc. Also, which is important, you need to update `window` property of `AppDelegate` object within this configuration block if you want to use window as key and visible.
-
-Next method creates navigation controller:
-
-```swift
-.move(toNavigationControllerOfType: UINavigationController.self) { (navigationController) -> Void in
-    let someViewController = SomeViewController()
-    navigationController.viewControllers = [someViewController]
-    navigationController.navigationBarHidden = true
-}
-```
-
-The first parameter is a type of navigation controller. The last parameter is a configuration block for newly created navigation controller. You can update settings of navigation controller within this block. For example, update visibility of navigation bar. Also, you can use this block to create a view controller and set view controller stack of navigation controller:
-
-```swift
-let someViewController = SomeViewController()
-navigationController.viewControllers = [someViewController]
-navigationController.navigationBarHidden = true
-```
-
-If you want to use your custom class for navigation bar or toolbar inside of navigation controller, there's another method:
-
-```swift
-.move(toNavigationControllerOfType: UINavigationController.self, withNavigationBarOfType: UINavigationBar.self, toolbarOfType: UIToolbar.self) { (navigationController) -> Void in
-    let someViewController = SomeViewController()
-    navigationController.viewControllers = [someViewController]
-    navigationController.navigationBarHidden = true
-}
-```
-
-The first parameter is type of navigation controller. The second parameter is a type of navigation bar. Third parameter is a type of toolbar. And, finally, the last parameter is a configuration block for navigation controller.
-
-All navigation methods of `VTNavigationManager` returns manager's object, so you can write code with chain:
-
-```swift
-VTNavigationManager.sharedNavigationManager().create(windowOfType: UIWindow.self, andMakeItKeyAndVisible: true) { (window) -> Void in
-    window.backgroundColor = .whiteColor()
-    self.window = window
-}.move(toNavigationControllerOfType: UINavigationController.self) { (navigationController) -> Void in
-    let someViewController = SomeViewController()
-    navigationController.viewControllers = [someViewController]
-    navigationController.navigationBarHidden = true
-}
 ```
 
 ## License
