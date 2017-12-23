@@ -20,12 +20,12 @@ public class ContainerView: UIView {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        customInitialization()
+        self.customInitialization()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        customInitialization()
+        self.customInitialization()
     }
     
     // MARK: Deinitializer
@@ -33,7 +33,7 @@ public class ContainerView: UIView {
     deinit {
         // Remove references
         
-        _contentView = nil
+        self._contentView = nil
     }
     
     // MARK: Outlets
@@ -49,19 +49,19 @@ public class ContainerView: UIView {
         set {
             // Remove previous content view if needed
             
-            if _contentView != nil {
-                _contentView!.removeFromSuperview()
+            if self._contentView != nil {
+                self._contentView!.removeFromSuperview()
             }
             
             // Update private variable
             
-            _contentView = newValue
+            self._contentView = newValue
             
             // Update view
             
             if newValue != nil {
                 newValue!.frame = bounds
-                addSubview(newValue!)
+                self.addSubview(newValue!)
             }
         }
     }
@@ -73,21 +73,22 @@ public class ContainerView: UIView {
         
         // Update content view
         
-        contentView?.frame = bounds
+        self.contentView?.frame = bounds
     }
     
-    public func setContentView<ContentViewType: UIView>(ofType contentViewType: ContentViewType.Type, fromNibWithClassNameLocatedInBundle bundle: Bundle?, withConfigurationBlock configurationBlock: ((_ contentView: ContentViewType) -> Void)?) {
+    public func setContentView<ContentView: UIView>(ofType contentViewType: ContentView.Type, fromNib nibQuery: NibQuery, locatedInBundle bundleQuery: BundleQuery, andConfigure configureContentView: ((_ contentView: ContentView) -> Void)?) {
         // Create new content view
         
-        let newContentView = ContentViewType.from(nib: .byClassName, inBundle: .byValue(bundle: bundle ?? .main))
+        let viewInitializer = ViewInitializer(viewClass: ContentView.self)
+        let newContentView = viewInitializer.view(fromNib: nibQuery, locatedInBundle: bundleQuery)
         
         // Update current content view
         
-        contentView = newContentView
+        self.contentView = newContentView
         
         // Configure new content view if needed
         
-        configurationBlock?(newContentView)
+        configureContentView?(newContentView)
     }
     
     // MARK: Private object methods
