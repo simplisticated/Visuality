@@ -46,8 +46,8 @@ class MainViewController: UIViewController {
         
         // Initialize circle view
         
-        containerForCircleView.setContentView(ofType: CircleView.self, fromNibWithClassNameLocatedInBundle: nil, withConfigurationBlock: { (contentView) in
-        })
+        self.containerForCircleView.setContentView(ofType: CircleView.self, fromNib: .byClassName, locatedInBundle: .main) { (contentView) in
+        }
     }
     
     override func didReceiveMemoryWarning() {

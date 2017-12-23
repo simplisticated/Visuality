@@ -19,7 +19,6 @@
 		69F98B271FA68A6E0028392A /* VTNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B1A1FA68A6E0028392A /* VTNavigationManager.swift */; };
 		69F98B281FA68A6E0028392A /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B1E1FA68A6E0028392A /* ContainerView.swift */; };
 		69F98B291FA68A6E0028392A /* ScrollableContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B201FA68A6E0028392A /* ScrollableContainerView.swift */; };
-		69F98B2A1FA68A6E0028392A /* ScrollableContainerViewScrollDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B211FA68A6E0028392A /* ScrollableContainerViewScrollDirection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +36,6 @@
 		69F98B1A1FA68A6E0028392A /* VTNavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VTNavigationManager.swift; sourceTree = "<group>"; };
 		69F98B1E1FA68A6E0028392A /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		69F98B201FA68A6E0028392A /* ScrollableContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableContainerView.swift; sourceTree = "<group>"; };
-		69F98B211FA68A6E0028392A /* ScrollableContainerViewScrollDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableContainerViewScrollDirection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				69F98B201FA68A6E0028392A /* ScrollableContainerView.swift */,
-				69F98B211FA68A6E0028392A /* ScrollableContainerViewScrollDirection.swift */,
 			);
 			path = ScrollableContainerView;
 			sourceTree = "<group>";
@@ -301,7 +298,6 @@
 				695B30AA1FA7219900AC0871 /* NibQuery.swift in Sources */,
 				695B30A01FA70CE000AC0871 /* ViewControllerInitializer.swift in Sources */,
 				69F98B291FA68A6E0028392A /* ScrollableContainerView.swift in Sources */,
-				69F98B2A1FA68A6E0028392A /* ScrollableContainerViewScrollDirection.swift in Sources */,
 				69F98B241FA68A6E0028392A /* UIViewExtensionInitialization.swift in Sources */,
 				695B309F1FA70CE000AC0871 /* ViewInitializer.swift in Sources */,
 				69F98B221FA68A6E0028392A /* NSBundleExtensionContent.swift in Sources */,
