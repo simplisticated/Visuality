@@ -34,18 +34,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Protocol methods
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Create window and display main screen
+        // Create window
         
-        VTNavigationManager.shared.create(windowOfType: UIWindow.self, andMakeItKeyAndVisible: true) { (window) in
-            window.backgroundColor = .white
-            self.window = window
-        }.move(toNavigationControllerOfType: UINavigationController.self, inWindow: window!, withConfigurationBlock: { (navigationController) in
-            let mainViewController = MainViewController.from(nib: .byClassName, inBundle: .main)
-            
-            navigationController.viewControllers = [
-                mainViewController
-            ]
-        })
+        let frameForWindow = UIScreen.main.bounds
+        self.window = UIWindow(frame: frameForWindow)
+        self.window!.backgroundColor = .white
+        self.window!.makeKeyAndVisible()
+        
+        // Display main screen
+        
+        let mainViewController = MainViewController.from(nib: .byClassName, inBundle: .main)
+        let navigationController = UINavigationController(rootViewController: mainViewController)
+        self.window!.rootViewController = navigationController
         
         // Return result
         
