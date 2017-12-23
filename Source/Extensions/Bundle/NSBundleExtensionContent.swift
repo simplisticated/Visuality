@@ -25,7 +25,7 @@ internal extension Bundle {
     
     - returns: True if nib exists. Otherwise, returns false.
     */
-    internal func vt_contains(nibWithName nibName: String) -> Bool {
+    internal func vt_containsNib(withName nibName: String) -> Bool {
         // Obtain path for nib
         
         let pathForNib = path(forResource: nibName, ofType: "nib")
@@ -57,7 +57,7 @@ internal extension Bundle {
     internal func vt_load<ViewType: UIView>(viewOfType viewType: ViewType.Type, fromNibWithName nibName: String) -> ViewType? {
         // Check for existance of nib
         
-        let nibExists = vt_contains(nibWithName: nibName)
+        let nibExists = vt_containsNib(withName: nibName)
         
         if (!nibExists) {
             return nil
