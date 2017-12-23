@@ -16,7 +16,6 @@
 		69F98B231FA68A6E0028392A /* NSObjectExtensionNamespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B121FA68A6E0028392A /* NSObjectExtensionNamespaces.swift */; };
 		69F98B241FA68A6E0028392A /* UIViewExtensionInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B141FA68A6E0028392A /* UIViewExtensionInitialization.swift */; };
 		69F98B261FA68A6E0028392A /* UIViewControllerExtensionInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B171FA68A6E0028392A /* UIViewControllerExtensionInitialization.swift */; };
-		69F98B271FA68A6E0028392A /* VTNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B1A1FA68A6E0028392A /* VTNavigationManager.swift */; };
 		69F98B281FA68A6E0028392A /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B1E1FA68A6E0028392A /* ContainerView.swift */; };
 		69F98B291FA68A6E0028392A /* ScrollableContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B201FA68A6E0028392A /* ScrollableContainerView.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +32,6 @@
 		69F98B121FA68A6E0028392A /* NSObjectExtensionNamespaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionNamespaces.swift; sourceTree = "<group>"; };
 		69F98B141FA68A6E0028392A /* UIViewExtensionInitialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionInitialization.swift; sourceTree = "<group>"; };
 		69F98B171FA68A6E0028392A /* UIViewControllerExtensionInitialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensionInitialization.swift; sourceTree = "<group>"; };
-		69F98B1A1FA68A6E0028392A /* VTNavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VTNavigationManager.swift; sourceTree = "<group>"; };
 		69F98B1E1FA68A6E0028392A /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		69F98B201FA68A6E0028392A /* ScrollableContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,7 +112,6 @@
 			children = (
 				695B30A11FA70D0E00AC0871 /* Types */,
 				695B309A1FA70CE000AC0871 /* Initializers */,
-				69F98B181FA68A6E0028392A /* Navigation */,
 				69F98B0E1FA68A6E0028392A /* Extensions */,
 				69F98B1B1FA68A6E0028392A /* Views */,
 			);
@@ -163,22 +160,6 @@
 				69F98B171FA68A6E0028392A /* UIViewControllerExtensionInitialization.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		69F98B181FA68A6E0028392A /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				69F98B191FA68A6E0028392A /* NavigationManager */,
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
-		69F98B191FA68A6E0028392A /* NavigationManager */ = {
-			isa = PBXGroup;
-			children = (
-				69F98B1A1FA68A6E0028392A /* VTNavigationManager.swift */,
-			);
-			path = NavigationManager;
 			sourceTree = "<group>";
 		};
 		69F98B1B1FA68A6E0028392A /* Views */ = {
@@ -301,7 +282,6 @@
 				69F98B241FA68A6E0028392A /* UIViewExtensionInitialization.swift in Sources */,
 				695B309F1FA70CE000AC0871 /* ViewInitializer.swift in Sources */,
 				69F98B221FA68A6E0028392A /* NSBundleExtensionContent.swift in Sources */,
-				69F98B271FA68A6E0028392A /* VTNavigationManager.swift in Sources */,
 				69F98B281FA68A6E0028392A /* ContainerView.swift in Sources */,
 				69F98B231FA68A6E0028392A /* NSObjectExtensionNamespaces.swift in Sources */,
 			);
