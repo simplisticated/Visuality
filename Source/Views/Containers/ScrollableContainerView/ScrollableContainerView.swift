@@ -16,7 +16,7 @@ public class ScrollableContainerView: UIView {
     
     // MARK: Private class methods
     
-    fileprivate class func defaultScrollDirection() -> ScrollableContainerViewScrollDirection {
+    fileprivate class func defaultScrollDirection() -> ScrollDirection {
         return .vertical
     }
     
@@ -70,9 +70,9 @@ public class ScrollableContainerView: UIView {
         }
     }
     
-    fileprivate var _scrollDirection: ScrollableContainerViewScrollDirection!
+    fileprivate var _scrollDirection: ScrollDirection!
     
-    public var scrollDirection: ScrollableContainerViewScrollDirection {
+    public var scrollDirection: ScrollDirection {
         get {
             return _scrollDirection
         }
@@ -105,10 +105,11 @@ public class ScrollableContainerView: UIView {
         }
     }
     
-    public func setContentView<ContentViewType: UIView>(ofType contentViewType: ContentViewType.Type, fromNibWithClassNameLocatedInBundle bundle: Bundle?, withScrollDirection scrollDirection: ScrollableContainerViewScrollDirection, andConfigurationBlock configurationBlock: ((_ contentView: ContentViewType) -> Void)?) {
+    public func setContentView<ContentView: UIView>(ofType contentViewType: ContentView.Type, fromNib nibQuery: NibQuery, locatedInBundle bundleQuery: BundleQuery, withScrollDirection scrollDirection: ScrollDirection, configure configureContentView: ((_ contentView: ContentView) -> Void)?) {
         // Create new content view
         
-        let newContentView = ContentViewType.from(nib: .byClassName, inBundle: .byValue(bundle: bundle ?? .main))
+        let viewInitializer = ViewInitializer(viewClass: ContentView.self)
+        let newContentView = viewInitializer.view(fromNib: nibQuery, locatedInBundle: bundleQuery)
         
         // Update scroll direction
         
@@ -120,7 +121,7 @@ public class ScrollableContainerView: UIView {
         
         // Configure new content view if needed
         
-        configurationBlock?(newContentView)
+        configureContentView?(newContentView)
     }
     
     // MARK: Private object methods
@@ -150,7 +151,7 @@ public class ScrollableContainerView: UIView {
         setNeedsLayout()
     }
     
-    fileprivate func obtain(frameForContentView contentView: UIView?, andScrollDirection scrollDirection: ScrollableContainerViewScrollDirection) -> CGRect {
+    fileprivate func obtain(frameForContentView contentView: UIView?, andScrollDirection scrollDirection: ScrollDirection) -> CGRect {
         if contentView == nil {
             return .zero
         } else {
@@ -171,13 +172,13 @@ public class ScrollableContainerView: UIView {
         }
     }
     
-    fileprivate func obtain(contentSizeForContentView contentView: UIView?, andScrollDirection scrollDirection: ScrollableContainerViewScrollDirection) -> CGSize {
+    fileprivate func obtain(contentSizeForContentView contentView: UIView?, andScrollDirection scrollDirection: ScrollDirection) -> CGSize {
         let frameForContentView = obtain(frameForContentView: contentView, andScrollDirection: scrollDirection)
         let requiredContentSize = frameForContentView.size
         return requiredContentSize
     }
     
-    fileprivate func setContentView(contentView: UIView?, forScrollDirection scrollDirection: ScrollableContainerViewScrollDirection) {
+    fileprivate func setContentView(contentView: UIView?, forScrollDirection scrollDirection: ScrollDirection) {
         // Remove previous content view if needed
         
         if _contentView != nil {
@@ -221,5 +222,14 @@ public class ScrollableContainerView: UIView {
     // MARK: Actions
     
     // MARK: Protocol methods
+    
+}
+
+public extension ScrollableContainerView {
+    
+    public enum ScrollDirection {
+        case horizontal
+        case vertical
+    }
     
 }
