@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Visuality"
-  s.version      = "5.3"
+  s.version      = "5.4"
   s.summary      = "Library for iOS that simplifies work with views in Swift."
 
   # This description is used to generate tags and improve search results.
