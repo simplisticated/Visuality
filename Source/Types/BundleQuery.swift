@@ -10,6 +10,6 @@ import Foundation
 
 public enum BundleQuery {
     case main
-    case byValue(bundle: Foundation.Bundle)
+    case byValue(bundle: Bundle)
     case byIdentifier(identifier: String)
 }
