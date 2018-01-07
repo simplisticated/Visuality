@@ -11,5 +11,6 @@ import Foundation
 public enum NibQuery {
     case byNibName(name: String)
     case byClassName
+    case byClassNameWithSuffix(suffix: Suffix)
     case none
 }
