@@ -40,99 +40,46 @@ or
 
 ### Views
 
-Below you can find examples of view initialization by using methods from `UIView` extension.
-
-Initialize view by name of NIB file and bundle:
+To create new `UIView` instance, you have to use `.from()` static method:
 
 ```swift
-let bundle = Bundle(identifier: "com.example.SomeBundleIdentifier")
-let view = SomeView.from(nib: .byNibName(name: "SomeNibName"), inBundle: .byValue(bundle: bundle))
+MyView.from(nib: <nib query>, inBundle: <bundle query>)
 ```
 
-Initialize view by name of NIB file and bundle identifier:
+Nib query can be one of the following values:
+
+- `.byNibName("MyView")` - loads NIB by its name
+- `.byClassName` - loads NIB by name of view class
+- `.byClassNameWithSuffix(<suffix>)` - loads NIB by name of view class with suffix
+- `.none` - loads view without NIB
+
+List of available suffixes for NIB name:
+
+- `._iPhone`
+- `._iPad`
+- `.custom("suffix")`
+
+Bundle query defines the bundle containing required NIB. Possible values are:
+
+- `.main` - main bundle
+- `.byValue(bundle)` - requires value of `Bundle` type
+- `.byIdentifier("com.example.App")` - requires bundle identifier
+
+So, if you need to initialize a view of `MyView` type with same-named NIB file located in main bundle, you can simply write:
 
 ```swift
-let view = SomeView.from(nib: .byNibName(name: "SomeNibName"), inBundle: .byIdentifier(identifier: "com.example.SomeBundleIdentifier"))
-```
-
-Initialize view by name of NIB file stored in main bundle:
-
-```swift
-let view = SomeView.from(nib: .byNibName(name: "SomeNibName"), inBundle: .main)
-```
-
-Initialize view by name of NIB file identical to name of view class and bundle:
-
-```swift
-let bundle = Bundle(identifier: "com.example.SomeBundleIdentifier")
-let view = SomeView.from(nib: .byClassName, inBundle: .byValue(bundle: bundle))
-```
-
-Initialize view by name of NIB file identical to name of view class and bundle identifier:
-
-```swift
-let view = SomeView.from(nib: .byClassName, inBundle: .byIdentifier(identifier: "com.example.SomeBundleIdentifier"))
-```
-
-Initialize view by name of NIB file that is identical to name of view class and stored in main bundle:
-
-```swift
-let view = SomeView.from(nib: .byClassName, inBundle: .main)
-```
-
-Also, you can initialize view without NIB by using `.none` value from `NibQuery`. Example:
-
-```swift
-let view = SomeView.from(nib: .none, inBundle: .main)
+let view = MyView.from(nib: .byClassName, inBundle: .main)
 ```
 
 ### View Controllers
 
-Initialization of view controller instances is very similar to view's initialization. Check examples below.
-
-Initialize view controller by name of NIB file and bundle:
+Initialization of view controller instances is very similar to view's initialization, but there's one more parameter:
 
 ```swift
-let bundle = Bundle(identifier: "com.example.SomeBundleIdentifier")
-let viewController = SomeViewController.from(nib: .byNibName(name: "SomeNibName"), inBundle: .byValue(bundle: bundle))
+let viewController = MyViewController.from(nib: .byClassName, inBundle: .main, loadView: false)
 ```
 
-Initialize view controller by name of NIB file and bundle identifier:
-
-```swift
-let viewController = SomeViewController.from(nib: .byNibName(name: "SomeNibName"), inBundle: .byIdentifier(identifier: "com.example.SomeBundleIdentifier"))
-```
-
-Initialize view controller by name of NIB file stored in main bundle:
-
-```swift
-let viewController = SomeViewController.from(nib: .byNibName(name: "SomeNibName"), inBundle: .main)
-```
-
-Initialize view controller by name of NIB file identical to name of view controller class and bundle:
-
-```swift
-let bundle = Bundle(identifier: "com.example.SomeBundleIdentifier")
-let viewController = SomeViewController.from(nib: .byClassName, inBundle: .byValue(bundle: bundle))
-```
-
-Initialize view by name of NIB file identical to name of view controller class and bundle identifier:
-
-```swift
-let viewController = SomeViewController.from(nib: .byClassName, inBundle: .byIdentifier(identifier: "com.example.SomeBundleIdentifier"))
-```
-
-Initialize view controller by name of NIB file that is identical to name of view controller class and stored in main bundle:
-
-```swift
-let viewController = SomeViewController.from(nib: .byClassName, inBundle: .main)
-```
-
-Similar to `UIView` initialization, it's possible to initialize view controller without NIB:
-
-```swift
-let viewController = SomeViewController.from(nib: .none, inBundle: .main)
-```
+The last parameter `loadView` is a boolean value defining whether view should be loaded immediately after view controller's instantiation. In most cases you don't need to load view immediately, but, sometimes, this is a quite helpful option.
 
 ## License
 
