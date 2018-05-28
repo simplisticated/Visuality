@@ -48,22 +48,22 @@ MyView.from(nib: <nib query>, inBundle: <bundle query>)
 
 Nib query can be one of the following values:
 
-- `.byNibName("MyView")` - loads NIB by its name
-- `.byClassName` - loads NIB by name of view class
-- `.byClassNameWithSuffix(<suffix>)` - loads NIB by name of view class with suffix
-- `.none` - loads view without NIB
+- `byNibName("MyView")` - loads NIB with custom name
+- `byClassName` - loads NIB with name of view class
+- `byClassNameWithSuffix(<suffix>)` - loads NIB with name of view class and suffix
+- `none` - loads view without NIB
 
 List of available suffixes for NIB name:
 
-- `._iPhone`
-- `._iPad`
-- `.custom("suffix")`
+- `_iPhone`
+- `_iPad`
+- `custom("suffix")`
 
 Bundle query defines the bundle containing required NIB. Possible values are:
 
-- `.main` - main bundle
-- `.byValue(bundle)` - requires value of `Bundle` type
-- `.byIdentifier("com.example.App")` - requires bundle identifier
+- `main` - main bundle
+- `byValue(bundle)` - requires value of `Bundle` type
+- `byIdentifier("com.example.App")` - requires bundle identifier
 
 So, if you need to initialize a view of `MyView` type with same-named NIB file located in main bundle, you can simply write:
 
