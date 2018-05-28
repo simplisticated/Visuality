@@ -67,11 +67,12 @@ internal class ViewInitializer<View: UIView> {
             nibName = name
             break
         case .byClassName:
-            nibName = View.vt_classNameWithoutNamespace()
+            nibName = ClassFormatter(type: View.self).classNameWithoutNamespace()
+            break
         case .byClassNameWithSuffix(let suffix):
             nibName = String(
                 format: "%@%@",
-                View.vt_classNameWithoutNamespace(),
+                ClassFormatter(type: View.self).classNameWithoutNamespace(),
                 suffix.string
             )
             break
