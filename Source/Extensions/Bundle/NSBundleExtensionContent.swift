@@ -66,10 +66,11 @@ internal extension Bundle {
         // Obtain result view
         
         let topLevelObjectsFromNib = loadNibNamed(nibName, owner: nil, options: nil) ?? [AnyObject]()
+        let requiredClassName = ClassFormatter(type: viewType).classNameWithNamespace()
         
         let filteredTopLevelObjectsFromNib = topLevelObjectsFromNib.filter { (evaluatedObject) -> Bool in
-            let requiredClassName = viewType.vt_classNameWithNamespace()
-            let evaluatedObjectClassName = ((evaluatedObject as! NSObject).classForCoder as! NSObject.Type).vt_classNameWithNamespace()
+            let evaluatedObjectClass = (evaluatedObject as! NSObject).classForCoder as! NSObject.Type
+            let evaluatedObjectClassName = ClassFormatter(type: evaluatedObjectClass).classNameWithNamespace()
             let classNameOfEvaluatedObjectIsEqualToRequiredClassName = evaluatedObjectClassName == requiredClassName
             return classNameOfEvaluatedObjectIsEqualToRequiredClassName
         }
