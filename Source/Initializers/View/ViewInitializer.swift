@@ -83,11 +83,19 @@ internal class ViewInitializer<View: UIView> {
         
         // Check whether nib exists in specified bundle
         
-        let nibExists = nibName == nil ? false : bundleOrMain.vt_containsNib(withName: nibName!)
+        let nibExists = nibName == nil ? false : NibFinder().nib(withName: nibName!, existsInBundle: bundleOrMain)
         
         // Obtain result view
         
-        let resultView = nibExists ? bundleOrMain.vt_load(viewOfType: View.self, fromNibWithName: nibName!) : View.init()
+        var resultView: View?
+        
+        if nibExists {
+            resultView = NibLoader().loadView(ofType: View.self, fromNibWithName: nibName!, locatedInBundle: bundleOrMain)
+        }
+        
+        if resultView == nil {
+            resultView = View.init()
+        }
         
         // Return result
         
