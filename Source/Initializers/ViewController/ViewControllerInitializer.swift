@@ -68,11 +68,12 @@ internal class ViewControllerInitializer<ViewController: UIViewController> {
             nibName = name
             break
         case .byClassName:
-            nibName = ViewController.vt_classNameWithoutNamespace()
+            nibName = ClassFormatter(type: ViewController.self).classNameWithoutNamespace()
+            break
         case .byClassNameWithSuffix(let suffix):
             nibName = String(
                 format: "%@%@",
-                ViewController.vt_classNameWithoutNamespace(),
+                ClassFormatter(type: ViewController.self).classNameWithoutNamespace(),
                 suffix.string
             )
             break
