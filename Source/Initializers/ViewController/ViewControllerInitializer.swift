@@ -84,7 +84,7 @@ internal class ViewControllerInitializer<ViewController: UIViewController> {
         
         // Check whether nib exists in specified bundle
         
-        let nibExists = nibName == nil ? false : bundleOrMain.vt_containsNib(withName: nibName!)
+        let nibExists = nibName == nil ? false : NibFinder().nib(withName: nibName!, existsInBundle: bundleOrMain)
         
         // Obtain result view controller
         
