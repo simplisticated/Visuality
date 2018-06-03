@@ -76,10 +76,18 @@ let view = MyView.from(nib: .byClassName, inBundle: .main)
 Initialization of view controller instances is very similar to view's initialization, but there's one more parameter:
 
 ```swift
-let viewController = MyViewController.from(nib: .byClassName, inBundle: .main, loadView: false)
+let viewController = MyViewController.from(nib: .byClassName, inBundle: .main, loadView: true)
 ```
 
 The last parameter `loadView` is a boolean value defining whether view should be loaded immediately after view controller's instantiation. In most cases you don't need to load view immediately, but, sometimes, this is a quite helpful option.
+
+By default, `loadView` is `false`, so, if you don't need to load view controller's view immediately, you can avoid mentioning this parameter:
+
+```swift
+let viewController = MyViewController.from(nib: .byClassName, inBundle: .main)
+```
+
+In this case view will be loaded right before displaying on the screen.
 
 ## License
 
