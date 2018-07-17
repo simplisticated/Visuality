@@ -20,7 +20,7 @@ Very often iOS developers face the problem of initializing view (or view control
 
 `Visuality` solves the problem described above. You can initialize view (and of course view controller) from NIB located in any bundle with just a one line of code! Sounds quite simple, isn't it? 😉
 
-Also, `Visuality` provides developer with special tools that simplify creating new window and switching between navigation controllers. Welcome to the world of low complexity! 😀
+That's not all features available in `Visuality`. There's a lot more! 🚀
 
 ## How To Get Started
 
