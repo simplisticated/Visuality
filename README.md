@@ -62,7 +62,7 @@ List of available suffixes for NIB name:
 Bundle query defines the bundle containing required NIB. Possible values are:
 
 - `main` - main bundle
-- `byValue(bundle)` - requires value of `Bundle` type
+- `byInstance(bundle)` - requires instance of `Bundle` type
 - `byIdentifier("com.example.App")` - requires bundle identifier
 
 So, if you need to initialize a view of `MyView` type with same-named NIB file located in main bundle, you can simply write:
