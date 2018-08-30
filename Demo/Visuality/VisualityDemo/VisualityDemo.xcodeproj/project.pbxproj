@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		699A4F7621388A50000ECAB8 /* Visuality.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699A4F7521388A50000ECAB8 /* Visuality.framework */; };
 		69F98AC01FA688970028392A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98ABF1FA688970028392A /* AppDelegate.swift */; };
 		69F98AC71FA688970028392A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69F98AC61FA688970028392A /* Assets.xcassets */; };
 		69F98AE01FA689340028392A /* UIColorExtensionListOfColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98AD31FA689340028392A /* UIColorExtensionListOfColors.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		699A4F7521388A50000ECAB8 /* Visuality.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Visuality.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F98ABC1FA688970028392A /* VisualityDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualityDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F98ABF1FA688970028392A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69F98AC61FA688970028392A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,7 +42,6 @@
 		69F98AEA1FA689C60028392A /* CircleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleView.xib; sourceTree = "<group>"; };
 		69F98AF01FA689C60028392A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		69F98AF11FA689C60028392A /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		69F98B301FA68BA90028392A /* Visuality.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Visuality.framework; path = "../../../../../../../../Library/Developer/Xcode/DerivedData/Visuality-alkjxraupfpyvgdxnuemahqpwodx/Build/Products/Debug-iphoneos/Visuality.framework"; sourceTree = "<group>"; };
 		69F98B311FA68BF00028392A /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699A4F7621388A50000ECAB8 /* Visuality.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +141,7 @@
 		69F98B2B1FA68B9B0028392A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				69F98B301FA68BA90028392A /* Visuality.framework */,
+				699A4F7521388A50000ECAB8 /* Visuality.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -346,7 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.visuality.VisualityDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -361,7 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.visuality.VisualityDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
