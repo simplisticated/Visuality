@@ -49,7 +49,7 @@ internal class ViewControllerInitializer<ViewController: UIViewController> {
         case .main:
             nibBundle = .main
             break
-        case let .byValue(bundle):
+        case let .byInstance(bundle):
             nibBundle = bundle
             break
         case let .byIdentifier(identifier):
