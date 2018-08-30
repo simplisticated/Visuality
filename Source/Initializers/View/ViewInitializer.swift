@@ -48,7 +48,7 @@ internal class ViewInitializer<View: UIView> {
         case .main:
             nibBundle = .main
             break
-        case let .byValue(bundle):
+        case let .byInstance(bundle):
             nibBundle = bundle
             break
         case let .byIdentifier(identifier):
