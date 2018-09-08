@@ -76,7 +76,7 @@ public class ContainerView: UIView {
         self.contentView?.frame = bounds
     }
     
-    public func setContentView<ContentView: UIView>(ofType contentViewType: ContentView.Type, fromNib nibQuery: NibQuery, locatedInBundle bundleQuery: BundleQuery, andConfigure configureContentView: ((_ contentView: ContentView) -> Void)?) {
+    public func setContentView<ContentView: UIView>(ofType contentViewType: ContentView.Type, fromNib nibQuery: NibQuery, locatedInBundle bundleQuery: BundleQuery, andConfigure configurationHandler: ContentViewConfigurationHandler<ContentView>? = nil) {
         // Create new content view
         
         let viewInitializer = ViewInitializer(viewClass: ContentView.self)
@@ -88,7 +88,7 @@ public class ContainerView: UIView {
         
         // Configure new content view if needed
         
-        configureContentView?(newContentView)
+        configurationHandler?(newContentView)
     }
     
     // MARK: Private object methods
@@ -101,6 +101,10 @@ public class ContainerView: UIView {
     
     // MARK: Actions
     
-    // MARK: Protocol methods
+}
+
+public extension ContainerView {
+    
+    public typealias ContentViewConfigurationHandler<ContentView: UIView> = (_ contentView: ContentView) -> Void
     
 }
