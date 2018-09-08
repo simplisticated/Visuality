@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ScrollableContainerView: UIView {
+internal class ScrollableContainerView: UIView {
     
     // MARK: Class variables & properties
     
@@ -225,9 +225,9 @@ public class ScrollableContainerView: UIView {
     
 }
 
-public extension ScrollableContainerView {
+internal extension ScrollableContainerView {
     
-    public enum ScrollDirection {
+    internal enum ScrollDirection {
         case horizontal
         case vertical
     }
