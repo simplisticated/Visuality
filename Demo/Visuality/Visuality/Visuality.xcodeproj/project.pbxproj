@@ -14,7 +14,7 @@
 		695B30AB1FA7219900AC0871 /* BundleQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695B30A91FA7219900AC0871 /* BundleQuery.swift */; };
 		6986970521447C8B00932A45 /* ViewInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6986970321447C8B00932A45 /* ViewInitializer.swift */; };
 		6986970621447C8B00932A45 /* ViewControllerInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6986970421447C8B00932A45 /* ViewControllerInitializer.swift */; };
-		6999EEF220029AB4005DC6B7 /* Suffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6999EEF120029AB4005DC6B7 /* Suffix.swift */; };
+		6999EEF220029AB4005DC6B7 /* NibNameSuffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6999EEF120029AB4005DC6B7 /* NibNameSuffix.swift */; };
 		69F98B071FA68A2A0028392A /* Visuality.h in Headers */ = {isa = PBXBuildFile; fileRef = 69F98B051FA68A2A0028392A /* Visuality.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69F98B241FA68A6E0028392A /* UIViewExtensionInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B141FA68A6E0028392A /* UIViewExtensionInitialization.swift */; };
 		69F98B261FA68A6E0028392A /* UIViewControllerExtensionInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98B171FA68A6E0028392A /* UIViewControllerExtensionInitialization.swift */; };
@@ -30,7 +30,7 @@
 		695B30A91FA7219900AC0871 /* BundleQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleQuery.swift; sourceTree = "<group>"; };
 		6986970321447C8B00932A45 /* ViewInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInitializer.swift; sourceTree = "<group>"; };
 		6986970421447C8B00932A45 /* ViewControllerInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerInitializer.swift; sourceTree = "<group>"; };
-		6999EEF120029AB4005DC6B7 /* Suffix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suffix.swift; sourceTree = "<group>"; };
+		6999EEF120029AB4005DC6B7 /* NibNameSuffix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibNameSuffix.swift; sourceTree = "<group>"; };
 		69F98B021FA68A2A0028392A /* Visuality.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Visuality.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F98B051FA68A2A0028392A /* Visuality.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Visuality.h; sourceTree = "<group>"; };
 		69F98B061FA68A2A0028392A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 			children = (
 				695B30A81FA7219800AC0871 /* NibQuery.swift */,
 				695B30A91FA7219900AC0871 /* BundleQuery.swift */,
-				6999EEF120029AB4005DC6B7 /* Suffix.swift */,
+				6999EEF120029AB4005DC6B7 /* NibNameSuffix.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -271,7 +271,7 @@
 				695B30AA1FA7219900AC0871 /* NibQuery.swift in Sources */,
 				6986970621447C8B00932A45 /* ViewControllerInitializer.swift in Sources */,
 				6986970521447C8B00932A45 /* ViewInitializer.swift in Sources */,
-				6999EEF220029AB4005DC6B7 /* Suffix.swift in Sources */,
+				6999EEF220029AB4005DC6B7 /* NibNameSuffix.swift in Sources */,
 				69F98B291FA68A6E0028392A /* ScrollableContainerView.swift in Sources */,
 				6901B87320BBFE18005E764C /* NibFinder.swift in Sources */,
 				69F98B241FA68A6E0028392A /* UIViewExtensionInitialization.swift in Sources */,
