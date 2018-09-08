@@ -17,8 +17,8 @@ public extension UIView {
      Creates new instance of view.
      
      - Parameters:
-         - nibQuery: Nib query.
-         - bundleQuery: Bundle query.
+         - nib: Nib query.
+         - bundle: Bundle query.
      
      - returns: View from specified location.
      */
