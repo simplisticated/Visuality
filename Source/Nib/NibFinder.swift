@@ -57,6 +57,4 @@ internal class NibFinder {
     
     // MARK: Private object methods
     
-    // MARK: Protocol implementation
-    
 }

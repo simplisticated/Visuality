@@ -37,7 +37,7 @@ internal class NibLoader {
      
      - returns: View with specified class loaded from nib with specified name.
      */
-    internal func loadView<View: UIView>(ofType viewType: View.Type, fromNibWithName nibName: String, locatedInBundle bundle: Bundle) -> View? {
+    public func loadView<View: UIView>(ofType viewType: View.Type, fromNibWithName nibName: String, locatedInBundle bundle: Bundle) -> View? {
         // Check for existance of nib
         
         let nibExists = NibFinder().nib(withName: nibName, existsInBundle: bundle)
@@ -66,7 +66,5 @@ internal class NibLoader {
     }
     
     // MARK: Private object methods
-    
-    // MARK: Protocol implementation
     
 }

@@ -64,7 +64,7 @@ internal class ViewControllerInitializer<ViewController: UIViewController> {
         var nibName: String?
         
         switch nibQuery {
-        case let .byNibName(name):
+        case .byNibName(let name):
             nibName = name
             break
         case .byClassName:
