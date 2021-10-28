@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public extension UIView {
+extension UIView {
     
     // MARK: Public class methods
     

@@ -225,7 +225,7 @@ internal class ScrollableContainerView: UIView {
     
 }
 
-internal extension ScrollableContainerView {
+extension ScrollableContainerView {
     
     internal enum ScrollDirection {
         case horizontal

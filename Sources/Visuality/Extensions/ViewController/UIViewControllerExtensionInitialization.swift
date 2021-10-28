@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public extension UIViewController {
+extension UIViewController {
     
     // MARK: Public class methods
     

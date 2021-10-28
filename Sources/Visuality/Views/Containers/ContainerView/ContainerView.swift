@@ -103,7 +103,7 @@ public class ContainerView: UIView {
     
 }
 
-public extension ContainerView {
+extension ContainerView {
     
     public typealias ContentViewConfigurationHandler<ContentView: UIView> = (_ contentView: ContentView) -> Void
     

@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Visuality"
-  s.version      = "5.5"
+  s.version      = "5.5.1"
   s.summary      = "Library for iOS that simplifies work with views in Swift."
 
   # This description is used to generate tags and improve search results.
@@ -28,8 +28,8 @@ Pod::Spec.new do |s|
 Visuality is a library for iOS which includes set of classes and extensions that simplify work views in Swift.
                    DESC
 
-  s.homepage     = "https://github.com/igormatyushkin014/Visuality"
-  s.screenshots  = "https://github.com/igormatyushkin014/Visuality/raw/master/Logo/logo_1024_1024.png"
+  s.homepage     = "https://github.com/russo-programmisto/Visuality"
+  s.screenshots  = "https://github.com/russo-programmisto/Visuality/raw/master/Logo/logo_1024_1024.png"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -53,10 +53,8 @@ Visuality is a library for iOS which includes set of classes and extensions that
   #  profile URL.
   #
 
-  s.author             = { "Igor Matyushkin" => "igormatyushkin014@gmail.com" }
-  # s.author    = "Igor Matyushkin"
-  # s.authors            = { "Igor Matyushkin" => "igormatyushkin014@gmail.com" }
-  s.social_media_url   = "https://twitter.com/imatyushkin1"
+  s.author = { "Igor Matyushkin" => "russo.programmisto@gmail.com" }
+  # s.social_media_url   = ""
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -80,7 +78,7 @@ Visuality is a library for iOS which includes set of classes and extensions that
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/igormatyushkin014/Visuality.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/russo-programmisto/Visuality.git", :tag => s.version }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,7 +89,7 @@ Visuality is a library for iOS which includes set of classes and extensions that
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Source", "Source/**/*"
+  s.source_files  = "Sources", "Sources/**/*"
   #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"

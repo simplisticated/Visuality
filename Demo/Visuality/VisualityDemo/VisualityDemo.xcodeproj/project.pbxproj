@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		699A4F7621388A50000ECAB8 /* Visuality.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699A4F7521388A50000ECAB8 /* Visuality.framework */; };
 		69F98AC01FA688970028392A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98ABF1FA688970028392A /* AppDelegate.swift */; };
 		69F98AC71FA688970028392A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69F98AC61FA688970028392A /* Assets.xcassets */; };
 		69F98AE01FA689340028392A /* UIColorExtensionListOfColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98AD31FA689340028392A /* UIColorExtensionListOfColors.swift */; };
@@ -16,20 +15,8 @@
 		69F98AF61FA689C60028392A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F98AF01FA689C60028392A /* MainViewController.swift */; };
 		69F98AF71FA689C60028392A /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F98AF11FA689C60028392A /* MainViewController.xib */; };
 		69F98B321FA68BF00028392A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F98B311FA68BF00028392A /* LaunchScreen.xib */; };
+		C3CB0E7C272AB5580050E367 /* Visuality.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CB0E7B272AB5580050E367 /* Visuality.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		69F98B2F1FA68BA60028392A /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		699A4F7521388A50000ECAB8 /* Visuality.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Visuality.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +30,7 @@
 		69F98AF01FA689C60028392A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		69F98AF11FA689C60028392A /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		69F98B311FA68BF00028392A /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		C3CB0E7B272AB5580050E367 /* Visuality.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Visuality.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				699A4F7621388A50000ECAB8 /* Visuality.framework in Frameworks */,
+				C3CB0E7C272AB5580050E367 /* Visuality.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +129,7 @@
 		69F98B2B1FA68B9B0028392A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3CB0E7B272AB5580050E367 /* Visuality.framework */,
 				699A4F7521388A50000ECAB8 /* Visuality.framework */,
 			);
 			path = Frameworks;
@@ -156,7 +145,6 @@
 				69F98AB81FA688970028392A /* Sources */,
 				69F98AB91FA688970028392A /* Frameworks */,
 				69F98ABA1FA688970028392A /* Resources */,
-				69F98B2F1FA68BA60028392A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
