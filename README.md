@@ -3,24 +3,13 @@
 </p>
 
 <p align="center">
-<a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat"></a>
-<a href="https://cocoapods.org"><img src="https://img.shields.io/cocoapods/v/Visuality.svg?maxAge=2592000"></a>
-<a href="https://cocoapods.org"><img src="https://img.shields.io/cocoapods/dt/Visuality.svg?maxAge=2592000"></a>
+<a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat"></a>
 <a href="https://tldrlegal.com/license/mit-license"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat"></a>
 </p>
 
 ## At a Glance
 
-Very often iOS developers face the problem of initializing view (or view controller) from NIB. Natively, iOS SDK requires developer to write a lot of code in this case:
-
-1. check programmatically existence of bundle where the NIB file is stored ☹️
-2. check existence of the NIB file inside of the bundle 😔
-3. load content from the NIB 😠
-4. find appropriate view from array of different elements 😡😡😡
-
-`Visuality` provides a powerful solution for the problem described above. You can initialize view (and of course view controller) from NIB located in any bundle with just a one line of code! Sounds quite simple, isn't it? 😉
-
-That's not all features available in `Visuality`. There's a lot more! 🚀
+`Visuality` helps you to create view or view controller instance with NIB by one line of code. This is the main purpose of this library. Actually, there's a lot more features!
 
 ## How To Get Started
 
@@ -28,7 +17,7 @@ That's not all features available in `Visuality`. There's a lot more! 🚀
 
 or
 
-- Use `Visuality` cocoapod
+- Use Swift package manager.
 
 ## Requirements
 
